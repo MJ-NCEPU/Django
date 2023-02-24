@@ -1,0 +1,46 @@
+{% extends "students/base.html" %}
+{% load static %}
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <style>
+        .mylessoncss video{
+            width: 1100px;
+            height: 600px;
+        }
+
+
+    </style>
+
+    <section class="content-header">
+        <h4>
+            {{ videoname }}
+        </h4>
+    </section>
+
+
+    <div class="col-md-12">
+        <div class="box box-primary">
+        </div>
+    </div>
+
+    <div class="col-md-12" style="background-color: white">
+        <div style="display: flex;flex-wrap: wrap">
+
+            <div class="mylessoncss">
+                <video
+                        id="my-video"
+                        class="video-js"
+                        controls
+                        preload="auto"
+                        width="260px"
+                        height="160px"
+                        poster="/static/uploads/video/learn.jpeg"
+                >
+                    {#   <source src="/static/video/tiger.mp4" type="video/mp4"/>#}
+                    <source src="/static/uploads/video/{{ videoname }}"/>
+                </video>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

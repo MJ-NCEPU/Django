@@ -1,0 +1,98 @@
+{% extends "myadmin/base.html" %}
+
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            学生列表
+            <small>优质教育资源信息管理</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">学生列表</li>
+            <li class="active">学生添加</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h2 class="box-title">
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true">添加学生信息</span>
+                        </h2>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal" action="{% url 'student_insert' %}" method="post">
+                        {% csrf_token %}
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">昵称：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="snickname" class="form-control" id="inputEmail3"
+                                           placeholder="昵称">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">姓名：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="sname" class="form-control" id="inputEmail3"
+                                           placeholder="姓名">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">班级：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="sclass" class="form-control" id="inputEmail3"
+                                           placeholder="班级">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">学号：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="snum" class="form-control" id="inputEmail3"
+                                           placeholder="学号">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">密码：</label>
+                                <div class="col-sm-4">
+                                    <input type="password" name="password" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">重复密码：</label>
+                                <div class="col-sm-4">
+                                    <input type="password" name="repassword" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">提交</button> &nbsp;
+                                <button type="reset" class="btn btn-default">重置</button>
+                                <div class="col-sm-offset-2 col-sm-10">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-footer -->
+                    </form>
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+
+    </section>
+    <!-- /.content -->
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "students/base.html" %}
+
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h4>
+            我的签到:
+        </h4>
+    </section>
+
+    <div class="box-body pad table-responsive">
+        <table class="table table-bordered text-center">
+            <tr>
+                <td>
+                    <form action="{% url 'quqiandao' %}" method="post">
+                        {% csrf_token %}
+                        {% if myqiandaolist.statusqiandao == 2 %}
+                            <button type="submit" class="btn btn-block btn-success"
+                                    style="width: 200px;background-color: red">未签到
+                            </button>
+                    </form>
+                        {% else %}
+                            <button class="btn btn-block btn-success"
+                                    style="width: 200px">已签到
+                            </button>
+                        {% endif %}
+                </td>
+            </tr>
+        </table>
+        </table>
+    </div>
+{% endblock %}

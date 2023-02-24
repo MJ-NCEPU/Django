@@ -1,0 +1,138 @@
+{% extends "students/base.html" %}
+{% load static %}
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            {{ classmate.sname }}
+            <small>优质教育资源信息管理</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">我的班级</li>
+            <li class="active">{{ classmate.sname }}</li>
+
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <!-- DIRECT CHAT -->
+                <div class="box box-warning direct-chat direct-chat-warning">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">聊天框</h3>
+
+                        <div class="box-tools pull-right">
+                            <span data-toggle="tooltip" title="3 New Messages" class="badge bg-yellow">3</span>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                    class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <!-- Conversations are loaded here -->
+                        <div class="direct-chat-messages">
+
+                            <!-- Message. Default to the left -->
+                            <div class="direct-chat-msg">
+                                <div class="direct-chat-info clearfix">
+                                    <span class="direct-chat-name pull-left">{{ request.session.classmate.sname }}</span>
+                                    <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+                                </div>
+                                <!-- /.direct-chat-info -->
+                                <img class="direct-chat-img"
+                                     src="/static/uploads/student/{{ request.session.classmate.cover_pic }}">
+                                <!-- /.direct-chat-img -->
+                                <div class="direct-chat-text">
+                                    Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。
+                                </div>
+                                <!-- /.direct-chat-text -->
+                            </div>
+                            <!-- /.direct-chat-msg -->
+
+                            <!-- Message to the right -->
+                            <div class="direct-chat-msg right">
+                                <div class="direct-chat-info clearfix">
+                                    <span class="direct-chat-name pull-right">{{ request.session.student.sname }}</span>
+                                    <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+                                </div>
+                                <!-- /.direct-chat-info -->
+                                <img class="direct-chat-img"
+                                     src="/static/uploads/student/{{ request.session.student.cover_pic }}">
+                                <!-- /.direct-chat-img -->
+                                <div class="direct-chat-text">
+                                    Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。
+                                </div>
+                                <!-- /.direct-chat-text -->
+                            </div>
+                            <!-- /.direct-chat-msg -->
+
+                            <!-- /.direct-chat-msg -->
+                            {% for ob in chattext %}
+                                {% if ob.send == request.session.student.snum %}
+                                    <!-- Message to the right -->
+                                    <div class="direct-chat-msg right">
+                                        <div class="direct-chat-info clearfix">
+                                            <span class="direct-chat-name pull-right">{{ request.session.student.sname }}</span>
+                                            <span class="direct-chat-timestamp pull-left">{{ ob.create_at }}</span>
+                                        </div>
+                                        <!-- /.direct-chat-info -->
+                                        <img class="direct-chat-img"
+                                             src="/static/uploads/student/{{ request.session.student.cover_pic }}">
+                                        <!-- /.direct-chat-img -->
+                                        <div class="direct-chat-text">
+                                            {{ ob.text }}
+                                        </div>
+                                        <!-- /.direct-chat-text -->
+                                    </div>
+                                {% else %}
+                                    <!-- Message. Default to the left -->
+                                    <div class="direct-chat-msg">
+                                        <div class="direct-chat-info clearfix">
+                                            <span class="direct-chat-name pull-left">{{ request.session.classmate.sname }}</span>
+                                            <span class="direct-chat-timestamp pull-right">{{ ob.create_at }}</span>
+                                        </div>
+                                        <!-- /.direct-chat-info -->
+                                        <img class="direct-chat-img"
+                                             src="/static/uploads/student/{{ request.session.classmate.cover_pic }}">
+                                        <!-- /.direct-chat-img -->
+                                        <div class="direct-chat-text">
+                                            {{ ob.text }}
+                                        </div>
+                                        <!-- /.direct-chat-text -->
+                                    </div>
+                                    <!-- /.direct-chat-msg -->
+                                {% endif %}
+                            {% endfor %}
+
+                        </div>
+                        <!--/.direct-chat-messages-->
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <form action="{% url 'sendstuzhuanchat' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="send" value="{{ request.session.student.snum }}">
+                            <input type="hidden" name="receipt" value="{{ request.session.classmate.snum }}">
+                            <div class="input-group">
+                                <input type="text" name="message" placeholder="发消息..." class="form-control">
+                                <span class="input-group-btn">
+                            <button type="submit" class="btn btn-warning btn-flat">发送</button>
+                          </span>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.box-footer-->
+                </div>
+                <!--/.direct-chat -->
+            </div>
+            <!-- /.col -->
+        </div>
+    </section>
+    <!-- /.content -->
+{% endblock %}

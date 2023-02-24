@@ -1,0 +1,42 @@
+{% extends "teacher/base.html" %}
+
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h4>
+            班级管理:
+        </h4>
+    </section>
+
+    <div class="box-body pad table-responsive">
+         <table class="table table-bordered text-center">
+            <tr>
+                <td>
+                    <a href="{% url 'classlist' request.session.teacher.gnum %}" type="button" class="btn btn-block btn-success" style="width: 200px" >添加班级</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+        <div class="col-md-12">
+          <div class="box box-primary">
+          </div>
+        </div>
+
+    <div class="box-body pad table-responsive">
+        <table class="table table-bordered text-center">
+            <tr>
+                {% for ov in classlist %}
+                    {% if ov.status == 1 %}
+                        <td>
+                        <form action="{% url 'classregulate_student_index' ov.classnum %}" method="post">
+                            {% csrf_token %}
+                       <button type="submit" class="btn btn-block btn-success" style="width: 200px">{{ ov.classnum }}</button>
+                        </form>
+                        </td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+{% endblock %}

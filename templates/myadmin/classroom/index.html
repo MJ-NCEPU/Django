@@ -1,0 +1,95 @@
+{% extends 'myadmin/base.html' %}
+
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            教室管理
+            <small>优质教育资源信息管理</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">教室管理</li>
+        </ol>
+        </section>
+    
+        <!-- Main content -->
+        <section class="content container-fluid">
+    
+        <div class="row">
+            <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                <h3 class="box-title">教室信息表</h3>
+    
+                <div class="box-tools">
+                    <form action="{% url 'classroomstatus' 1 %}" method="get">
+                        <div class="input-group input-group-sm" style="width:150px;">
+                          <input type="text" name="keyword" class="form-control pull-right" placeholder="教室号">
+        
+                          <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tr>
+                    <th>ID</th>
+                    <th>楼号</th>
+                    <th>教室号</th>
+                    <th>座位数</th>
+                    <th>当前状态</th>
+                    <th>添加时间</th>
+                    <th>修改时间</th>
+                    <th>操作</th>
+                    </tr>
+                    {% for vo in classroomlist %}
+                    <tr>
+                    <td>{{ vo.id }}</td>
+                    <td>{{ vo.build }}</td>
+                    <td>{{ vo.room }}</td>
+                    <td>{{ vo.sitenum }}</td>
+                    <td>
+                        {% if vo.status == 1 %}
+                            <span style="color:green">空闲</span>
+                        {% elif vo.status == 2 %}
+                            <span style="color:red">使用</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ vo.create_at|date:'Y-m-d' }}</td>
+                    <td>{{ vo.update_at|date:'Y-m-d' }}</td>
+                    <td>
+                        <a type="button" href="{% url 'classroom_edit' vo.id %}" class="btn btn-success btn-xs">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 编辑</a>
+                        <button type="button" onclick="doDel('{% url 'classroom_delete' vo.id %}')" class="btn btn-danger btn-xs">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除</button>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix">
+                <a role="button" href="{% url 'classroom_add' %}" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加教室</a>
+
+                <ul class="pagination pagination-sm no-margin pull-right">
+                    <li><a href="{% url 'classroom_index' pIndex|add:-1 %}?{{mywhere|join:'&'}}">&laquo;</a></li>
+                    {% for p in plist %}
+                    <li {% if p == pIndex %}class="active"{% endif %}><a href="{% url 'classroom_index' p %}?{{mywhere|join:'&'}}">{{p}}</a></li>
+                    {% endfor %}
+                    <li><a href="{% url 'classroom_index' pIndex|add:1 %}?{{mywhere|join:'&'}}">&raquo;</a></li>
+                </ul>
+                </div>
+            </div>
+            <!-- /.box -->
+            </div>
+        </div>
+    
+        </section>
+        <!-- /.content -->
+{% endblock %}

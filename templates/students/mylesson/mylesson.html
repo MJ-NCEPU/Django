@@ -1,0 +1,72 @@
+{% extends "students/base.html" %}
+{% load static %}
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <style>
+        .mylessoncss {
+            margin-right: 20px;
+            margin-left: 18px;
+            margin-top: 20px;
+        }
+
+        .mylessoncss img {
+            border-radius: 5%;
+        }
+
+        .mylessoncss ul {
+            list-style: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .mylessoncss ul li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        .mylessoncss ul li a {
+            padding: 0 5px;
+            display: block;
+        }
+    </style>
+
+    <section class="content-header">
+        <h4>
+            我的课程:
+        </h4>
+    </section>
+
+
+    <div class="col-md-12">
+        <div class="box box-primary">
+        </div>
+    </div>
+
+    <div class="col-md-12" style="background-color: white">
+        <div style="display: flex;flex-wrap: wrap">
+
+            {% for ob in mylessones %}
+                {% for osl in student_lesson %}
+                    {% if ob.id == osl.lessonid %}
+                        <div class="mylessoncss">
+                            <div><a href="{% url 'inlesson' ob.id %}"><img
+                                    src="/static/student/lessonimages/{{ ob.cover_pic }}"/></a></div>
+                            <div>
+                                <ul>
+                                    <li><h4>{{ ob.name }}</h4></li>
+                                    {% if osl.idstatus == 1 %}
+                                        <li><a href="{% url 'addmycollect' ob.id %}"><i class="fa fa-star-o"></i></a>
+                                        </li>
+                                    {% elif osl.idstatus == 2 %}
+                                        <li><a href="{% url 'delmycollect' ob.id %}"><i class="fa fa-star"></i></a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

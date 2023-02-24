@@ -1,0 +1,103 @@
+{% extends "students/base.html" %}
+{% load static %}
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            个人中心
+            <small>优质教育资源信息管理</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">个人中心</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="box box-widget widget-user-2">
+                    <!-- Add the bg color to the header using any of the bg-* classes -->
+                    <div class="widget-user-header bg-yellow">
+                        <div class="widget-user-image">
+                                <img class="img-circle" src="/static/uploads/student/{{ request.session.student.cover_pic }}"
+                                 alt="User Avatar">
+                        </div>
+                        <!-- /.widget-user-image -->
+
+                         <a href="{% url 'myself_student_xiubasicinfo' request.session.student.snum %}" style="color: white">
+                          <h3 class="widget-user-username">{{ request.session.student.sname }}</h3>
+                          <h5 class="widget-user-desc">昵称:{{ request.session.student.snickname }}</h5>
+                         </a>
+                    </div>
+                    <div class="box-footer no-padding">
+                        <ul class="nav nav-stacked">
+                            <li><a href="#">班级<span class="pull-right badge bg-blue">{{ request.session.student.sclass }}</span></a>
+                            </li>
+                            <li><a href="#">学号 <span class="pull-right badge bg-aqua">{{ request.session.student.snum }} </span></a>
+                            </li>
+                            <li><a href="#">学院 <span
+                                    class="pull-right badge bg-green">{{ request.session.student.academy }}</span></a>
+                            </li>
+                            <li><a href="#">创建时间 <span
+                                    class="pull-right badge bg-red">{{ request.session.student.create_at }}</span></a></li>
+                        </ul>
+                        <a href="{% url 'student_logout' %}" class="btn btn-primary btn-block"><b>退出登录</b></a>
+                        <a href="{% url 'myself_addevent_student' %}" class="btn btn-primary btn-block"><b>备忘录</b></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-7">
+                <div class="box">
+                    <div class="box-header">
+                        <h2 class="box-title"><span class="glyphicon glyphicon-calendar"
+                                                    aria-hidden="true">修改个人密码</span></h2>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form action="{% url 'myself_student_xiupassword' request.session.student.snum %}"  class="form-horizontal"
+                          method="post">
+                        {% csrf_token %}
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">旧密码：</label>
+                                <div class="col-sm-4">
+                                    <input type="password" name="password" class="form-control" id="inputEmail3"
+                                           placeholder="旧密码">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">新密码：</label>
+                                <div class="col-sm-4">
+                                    <input type="password" name="newpassword" class="form-control" id="inputEmail3"
+                                           placeholder="新密码">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">确认</button> &nbsp;
+                                <button type="reset" class="btn btn-default">重置</button>
+                                <div class="col-sm-offset-2 col-sm-10">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-footer -->
+                    </form>
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+
+    </section>
+    <!-- /.content -->
+{% endblock %}

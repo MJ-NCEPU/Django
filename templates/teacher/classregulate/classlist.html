@@ -1,0 +1,273 @@
+{% extends "teacher/base.html" %}
+
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h4>
+            班级管理:
+        </h4>
+    </section>
+
+    <!-- TO DO List -->
+    <div class="box box-primary">
+        <div class="box-header">
+            <i class="ion ion-clipboard"></i>
+
+            <h3 class="box-title">班级列表</h3>
+
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+            <ul class="todo-list">
+
+                <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                    <!-- checkbox -->
+                    <input type="checkbox" value="">
+                    <!-- todo text -->
+                    <span class="text">2018101</span>
+                    <!-- Emphasis label -->
+                    {% if 2018101 in classlist %}
+                        <small class="label label-danger"> 已选</small>
+                        <!-- General tools such as edit or delete-->
+                        <div class="tools">
+                        <form action="{% url 'beganmin' 2018101 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-minus"></i></button>
+                             </form>
+                        </div>
+                    {% elif 2018101 not in classlist%}
+                        <div class="tools">
+                        <form action="{% url 'beganadd' 2018101 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-plus"></i></button>
+                        </form>
+                        </div>
+                    {% endif %}
+                </li>
+
+            <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                    <!-- checkbox -->
+                    <input type="checkbox" value="">
+                    <!-- todo text -->
+                    <span class="text">2018102</span>
+                    <!-- Emphasis label -->
+                    {% if 2018102 in classlist %}
+                        <small class="label label-danger"> 已选</small>
+                        <!-- General tools such as edit or delete-->
+                        <div class="tools">
+                        <form action="{% url 'beganmin' 2018102 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-minus"></i></button>
+                             </form>
+                        </div>
+                    {% elif 2018102 not in classlist%}
+                        <div class="tools">
+                        <form action="{% url 'beganadd' 2018102 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-plus"></i></button>
+                        </form>
+                        </div>
+                    {% endif %}
+                </li>
+
+            <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                    <!-- checkbox -->
+                    <input type="checkbox" value="">
+                    <!-- todo text -->
+                    <span class="text">2018103</span>
+                    <!-- Emphasis label -->
+                    {% if 2018103 in classlist %}
+                        <small class="label label-danger"> 已选</small>
+                        <!-- General tools such as edit or delete-->
+                        <div class="tools">
+                        <form action="{% url 'beganmin' 2018103 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-minus"></i></button>
+                             </form>
+                        </div>
+                    {% elif 2018103 not in classlist%}
+                        <div class="tools">
+                        <form action="{% url 'beganadd' 2018103 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-plus"></i></button>
+                        </form>
+                        </div>
+                    {% endif %}
+                </li>
+
+            <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                    <!-- checkbox -->
+                    <input type="checkbox" value="">
+                    <!-- todo text -->
+                    <span class="text">2018104</span>
+                    <!-- Emphasis label -->
+                    {% if 2018104 in classlist %}
+                        <small class="label label-danger"> 已选</small>
+                        <!-- General tools such as edit or delete-->
+                        <div class="tools">
+                        <form action="{% url 'beganmin' 2018104 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-minus"></i></button>
+                             </form>
+                        </div>
+                    {% elif 2018104 not in classlist%}
+                        <div class="tools">
+                        <form action="{% url 'beganadd' 2018104 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-plus"></i></button>
+                        </form>
+                        </div>
+                    {% endif %}
+                </li>
+
+            <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                    <!-- checkbox -->
+                    <input type="checkbox" value="">
+                    <!-- todo text -->
+                    <span class="text">2018105</span>
+                    <!-- Emphasis label -->
+                    {% if 2018105 in classlist %}
+                        <small class="label label-danger"> 已选</small>
+                        <!-- General tools such as edit or delete-->
+                        <div class="tools">
+                        <form action="{% url 'beganmin' 2018105 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-minus"></i></button>
+                             </form>
+                        </div>
+                    {% elif 2018105 not in classlist%}
+                        <div class="tools">
+                        <form action="{% url 'beganadd' 2018105 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-plus"></i></button>
+                        </form>
+                        </div>
+                    {% endif %}
+                </li>
+
+            <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                    <!-- checkbox -->
+                    <input type="checkbox" value="">
+                    <!-- todo text -->
+                    <span class="text">2018106</span>
+                    <!-- Emphasis label -->
+                    {% if 2018106 in classlist %}
+                        <small class="label label-danger"> 已选</small>
+                        <!-- General tools such as edit or delete-->
+                        <div class="tools">
+                        <form action="{% url 'beganmin' 2018106 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-minus"></i></button>
+                             </form>
+                        </div>
+                    {% elif 2018106 not in classlist%}
+                        <div class="tools">
+                        <form action="{% url 'beganadd' 2018106 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-plus"></i></button>
+                        </form>
+                        </div>
+                    {% endif %}
+                </li>
+
+            <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                    <!-- checkbox -->
+                    <input type="checkbox" value="">
+                    <!-- todo text -->
+                    <span class="text">2018107</span>
+                    <!-- Emphasis label -->
+                    {% if 2018107 in classlist %}
+                        <small class="label label-danger"> 已选</small>
+                        <!-- General tools such as edit or delete-->
+                        <div class="tools">
+                        <form action="{% url 'beganmin' 2018107 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-minus"></i></button>
+                             </form>
+                        </div>
+                    {% elif 2018107 not in classlist%}
+                        <div class="tools">
+                        <form action="{% url 'beganadd' 2018107 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-plus"></i></button>
+                        </form>
+                        </div>
+                    {% endif %}
+                </li>
+
+            <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                    <!-- checkbox -->
+                    <input type="checkbox" value="">
+                    <!-- todo text -->
+                    <span class="text">2018108</span>
+                    <!-- Emphasis label -->
+                    {% if 2018108 in classlist %}
+                        <small class="label label-danger"> 已选</small>
+                        <!-- General tools such as edit or delete-->
+                        <div class="tools">
+                        <form action="{% url 'beganmin' 2018108 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-minus"></i></button>
+                             </form>
+                        </div>
+                    {% elif 2018108 not in classlist%}
+                        <div class="tools">
+                        <form action="{% url 'beganadd' 2018108 %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-plus"></i></button>
+                        </form>
+                        </div>
+                    {% endif %}
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer clearfix no-border">
+            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add</button>
+        </div>
+    </div>
+    <!-- /.box -->
+
+{% endblock %}

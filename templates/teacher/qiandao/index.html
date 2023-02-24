@@ -1,0 +1,72 @@
+{% extends 'teacher/base.html' %}
+
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            学生列表
+            <small>优质教育资源信息管理</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">签到管理</li>
+            <li class="active">{{ classnum }}班</li>
+        </ol>
+        </section>
+    
+        <!-- Main content -->
+        <section class="content container-fluid">
+    
+        <div class="row">
+            <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                <h3 class="box-title">{{ classnum }}学生签到表</h3>
+
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tr>
+                    <th>头像</th>
+                    <th>昵称</th>
+                    <th>姓名</th>
+                    <th>班级</th>
+                    <th>学号</th>
+                    <th>当前状态</th>
+                    <th>签到状态</th>
+                    </tr>
+                    {% for vo in studentlist %}
+                    <tr>
+                    <td><img src="/static/uploads/student/{{ vo.cover_pic }}" width="40px" style="border-radius: 50%"/></td>
+                    <td>{{ vo.snickname }}</td>
+                    <td>{{ vo.sname }}</td>
+                    <td>{{ vo.sclass }}</td>
+                    <td>{{ vo.snum }}</td>
+                    <td>
+                        {% if vo.status == 1 %}
+                            <span style="color:green">正常</span>
+                        {% elif vo.status == 2 %}
+                            <span style="color:red">禁用</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if vo.statusqiandao == 1 %}
+                            <span style="color:green">已签到</span>
+                        {% elif vo.statusqiandao == 2 %}
+                            <span style="color:red">未签到</span>
+                        {% endif %}
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+            </div>
+        </div>
+    
+        </section>
+        <!-- /.content -->
+{% endblock %}

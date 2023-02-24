@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>优质教育资源信息管理教师发布通知界面</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <!-- 象形字体 -->
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/font-awesome/css/font-awesome.min.css' %}">
+    <!-- 图标 -->
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/Ionicons/css/ionicons.min.css' %}">
+    <!-- 主题风格样式 -->
+    <link rel="stylesheet" href="{% static 'myadmin/dist/css/AdminLTE.min.css' %}">
+    <!-- AdminLTE 皮肤.这里选择的是skin-blue样式，我们还可以有其他皮肤可以选择. -->
+    <link rel="stylesheet" href="{% static 'myadmin/dist/css/skins/skin-blue.min.css' %}">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="{% static 'myadmin/local/js/html5shiv.min.js'%}"></script>
+  <script src="{% static 'myadmin/local/js/respond.min.js'%}"></script>
+  <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+
+    <header class="main-header">
+        <nav class="navbar navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand"></a>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <!-- Full Width Column -->
+    <div class="content-wrapper">
+        <div class="container">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    发布通知
+                    <small>{{ request.session.dtime }}</small>
+                </h1>
+            </section>
+
+            <section class="content">
+                <!-- quick email widget -->
+                <div class="box box-info">
+
+                    <div class="box-header">
+                        <i class="fa fa-commenting-o"></i>
+
+                        <!-- tools box -->
+                        <div class="pull-right box-tools">
+                            <button type="button" class="btn btn-info btn-sm" data-widget="remove"
+                                    data-toggle="tooltip"
+                                    title="Remove">
+                                <i class="fa fa-times"></i></button>
+                        </div>
+                        <!-- /. tools -->
+                    </div>
+
+                    <form action="{% url 'addnotice' request.session.teacher.gnum %}" method="post">
+                        {% csrf_token %}
+                        <div class="box-body">
+                            <textarea  name="text" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; padding: 10px;">
+
+                            </textarea>
+                        </div>
+
+                        <div class="box-footer clearfix">
+                            <button type="submit" class="pull-right btn btn-default" id="sendEmail">发布
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+
+                {% for ob in noticelist %}
+                    <div class="box box-default" style="width: 100%">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">{{ ob.create_at }}</h3>
+                        </div>
+                        <div class="box-body">
+                            <span>{{ ob.text }}</span>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                {% endfor %}
+
+                <!-- /.box -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.container -->
+    </div>
+
+
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="container">
+            <strong> &copy; 201819802 <a href="https://adminlte.io">马冀</a></strong>
+        </div>
+        <!-- /.container -->
+    </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="{% static 'myadmin/bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'myadmin/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- Slimscroll -->
+<script src="{% static 'myadmin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'myadmin/bower_components/fastclick/lib/fastclick.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'myadmin/dist/js/adminlte.min.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'myadmin/dist/js/demo.js' %}"></script>
+</body>
+</html>

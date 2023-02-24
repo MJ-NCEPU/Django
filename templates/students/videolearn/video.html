@@ -1,0 +1,815 @@
+{% extends "students/videolearn/base.html " %}
+{% load static %}
+{% block main_body %}
+    <style>
+        button:hover {
+            color: rgb(74, 144, 226);
+        }
+    </style>
+    <section class="banner-section">
+        <div class="container">
+            <div class="banner-text">
+                <h2>学无止境 永不停歇</h2>
+                <a href="#" title="">开始学习</a>
+            </div><!--banner-text end-->
+        </div>
+    </section><!--banner-section end-->
+
+    <section class="services-sec">
+    </section><!--services-sec end-->
+
+    <section class="vds-main">
+        <!--第一大类-->
+        <div class="vidz-row">
+            <div class="container">
+                <div class="vidz_sec">
+                    <h3>计算机类</h3>
+                    <div class="vidz_list">
+                        <div class="row">
+                            <!--第一-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/jisuanji/datastruct.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">8:13</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="datastruct.jpg" name="image">
+                                            <input type="hidden" value="datastruct.mp4" name="videoimage">
+                                            <input type="hidden" value="数据结构图的知识" name="name">
+                                            <input type="hidden" value="jisuanji" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    数据结构图的知识
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>686K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第二-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/jisuanji/osjingsui.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">10:17</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="osjingsui.jpg" name="image">
+                                            <input type="hidden" value="osjingsui.mp4" name="videoimage">
+                                            <input type="hidden" value="《操作系统 精髓与设计原理》学习" name="name">
+                                            <input type="hidden" value="jisuanji" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    《操作系统 精髓与设计原理》学习
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第三-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/jisuanji/jizu.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">20:22</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="jizu.jpg" name="image">
+                                            <input type="hidden" value="jizu.mp4" name="videoimage">
+                                            <input type="hidden" value="计算机的组成和工作原理" name="name">
+                                            <input type="hidden" value="jisuanji" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    计算机的组成和工作原理
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第四-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/jisuanji/jiwang.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">11:37</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="jiwang.jpg" name="image">
+                                            <input type="hidden" value="jiwang.mp4" name="videoimage">
+                                            <input type="hidden" value="【计算机网络期末复习】子网划分" name="name">
+                                            <input type="hidden" value="jisuanji" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    【计算机网络期末复习】子网划分
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第五-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/jisuanji/oracle.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">20:22</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="oracle.jpg" name="image">
+                                            <input type="hidden" value="oracle.mp4" name="videoimage">
+                                            <input type="hidden" value="Oracle数据库及实例" name="name">
+                                            <input type="hidden" value="jisuanji" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    Oracle数据库及实例
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第六-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/jisuanji/linux1.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">22:56</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="linux1.jpg" name="image">
+                                            <input type="hidden" value="linux1.mp4" name="videoimage">
+                                            <input type="hidden" value="Linux的基本操作" name="name">
+                                            <input type="hidden" value="jisuanji" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    Linux的基本操作
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第七-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/jisuanji/linux2.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">12:13</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="linux2.jpg" name="image">
+                                            <input type="hidden" value="linux2.mp4" name="videoimage">
+                                            <input type="hidden" value="Linux脱离鼠标指南" name="name">
+                                            <input type="hidden" value="jisuanji" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    Linux脱离鼠标指南
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+
+                        </div>
+                    </div><!--vidz_list end-->
+                </div><!--vidz_videos end-->
+            </div>
+        </div><!--vidz-row end-->
+
+        <!--第二大类-->
+        <div class="vidz-row">
+            <div class="container">
+                <div class="vidz_sec">
+                    <h3>英语类</h3>
+                    <div class="vidz_list">
+                        <div class="row">
+                            <!--第一-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/english/tingli1.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">11:04</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="tingli1.jpg" name="image">
+                                            <input type="hidden" value="tingli1.mp4" name="videoimage">
+                                            <input type="hidden" value="英语听力听不懂？给大家几个技巧" name="name">
+                                            <input type="hidden" value="english" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    英语听力听不懂？给大家几个技巧
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第二-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/english/tingli2.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">12:51</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="tingli2.jpg" name="image">
+                                            <input type="hidden" value="tingli2.mp4" name="videoimage">
+                                            <input type="hidden" value="超简单卡片笔记app助力英语听力学习" name="name">
+                                            <input type="hidden" value="english" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    超简单卡片笔记app助力英语听力学习
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+
+                            <!--第三-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/english/tingli3.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">13:14</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="tingli3.jpg" name="image">
+                                            <input type="hidden" value="tingli3.mp4" name="videoimage">
+                                            <input type="hidden" value="100个基础英语单词！" name="name">
+                                            <input type="hidden" value="english" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    100个基础英语单词！
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第四-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/english/kouyu1.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">15:38</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="kouyu1.jpg" name="image">
+                                            <input type="hidden" value="kouyu1.mp4" name="videoimage">
+                                            <input type="hidden" value="每天必用的15个英语句型，学习英语初级口语听力必！" name="name">
+                                            <input type="hidden" value="english" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    每天必用的15个英语句型，学习英语初级口语听力必！
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第五-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/english/kouyu2.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">13:14</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="kouyu2.jpg" name="image">
+                                            <input type="hidden" value="kouyu2.mp4" name="videoimage">
+                                            <input type="hidden" value="一个普通人的英语学习小tip｜从哑巴英语到流利日常！" name="name">
+                                            <input type="hidden" value="english" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    一个普通人的英语学习小tip｜从哑巴英语到流利日常
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+
+
+                        </div>
+                    </div><!--vidz_list end-->
+                </div><!--vidz_videos end-->
+            </div>
+        </div><!--vidz-row end-->
+
+        <!--第三大类-->
+        <div class="vidz-row">
+            <div class="container">
+                <div class="vidz_sec">
+                    <h3>数学类</h3>
+                    <div class="vidz_list">
+                        <div class="row">
+                            <!--第一-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/math/gaoshu.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">17:01</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="gaoshu.jpg" name="image">
+                                            <input type="hidden" value="gaoshu.mp4" name="videoimage">
+                                            <input type="hidden" value="【高数定理篇】单调性、凹凸性、极值点、拐点、渐近线" name="name">
+                                            <input type="hidden" value="math" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    【高数定理篇】单调性、凹凸性、极值点、拐点、渐近线
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第二-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/math/xiandai.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">13:44</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="xiandai.jpg" name="image">
+                                            <input type="hidden" value="xiandai.mp4" name="videoimage">
+                                            <input type="hidden" value="数学最后一招（线代大题）" name="name">
+                                            <input type="hidden" value="math" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    数学最后一招（线代大题）
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第三-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/math/gailv.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">22:14</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="gailv.jpg" name="image">
+                                            <input type="hidden" value="gailv.mp4" name="videoimage">
+                                            <input type="hidden" value="【高考数学】20分钟刷完《概率与统计》所有题型" name="name">
+                                            <input type="hidden" value="math" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    【高考数学】20分钟刷完《概率与统计》所有题型
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+
+
+                        </div>
+                    </div><!--vidz_list end-->
+                </div><!--vidz_videos end-->
+            </div>
+        </div><!--vidz-row end-->
+
+        <!--第四大类-->
+        <div class="vidz-row">
+            <div class="container">
+                <div class="vidz_sec">
+                    <h3>会计类</h3>
+                    <div class="vidz_list">
+                        <div class="row">
+                             <!--第一-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/kuaiji/kuaiji.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">15:18</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="kuaiji.jpg" name="image">
+                                            <input type="hidden" value="kuaiji.mp4" name="videoimage">
+                                            <input type="hidden" value="2021初级会计必背公式合集，做题事半功倍！" name="name">
+                                            <input type="hidden" value="kuaiji" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    2021初级会计必背公式合集，做题事半功倍！
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                             <!--第二-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/kuaiji/kuaiji2.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">28:54</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="kuaiji2.jpg" name="image">
+                                            <input type="hidden" value="kuaiji2.mp4" name="videoimage">
+                                            <input type="hidden" value="会计实操 新手会计做账 工商注册-核名申请" name="name">
+                                            <input type="hidden" value="kuaiji" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    会计实操 新手会计做账 工商注册-核名申请
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                             <!--第三-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/kuaiji/kuaiji3.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">23:27</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="kuaiji3.jpg" name="image">
+                                            <input type="hidden" value="kuaiji3.mp4" name="videoimage">
+                                            <input type="hidden" value="中级会计实务重要知识点讲解" name="name">
+                                            <input type="hidden" value="kuaiji" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    中级会计实务重要知识点讲解
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+
+
+                        </div>
+                    </div><!--vidz_list end-->
+                </div><!--vidz_videos end-->
+            </div>
+        </div><!--vidz-row end-->
+
+        <!--第五大类-->
+        <div class="vidz-row">
+            <div class="container">
+                <div class="vidz_sec">
+                    <h3>管理学</h3>
+                    <div class="vidz_list">
+                        <div class="row">
+                             <!--第一-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/guanlixue/guanlixue1.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">13:25</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="guanlixue1.jpg" name="image">
+                                            <input type="hidden" value="guanlixue1.mp4" name="videoimage">
+                                            <input type="hidden" value="【教材精讲】周三多管理学之社会责任" name="name">
+                                            <input type="hidden" value="guanlixue" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    【教材精讲】周三多管理学之社会责任
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+
+                             <!--第二-->
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/guanlixue/guanlixue2.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">18:20</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="guanlixue2.jpg" name="image">
+                                            <input type="hidden" value="guanlixue2.mp4" name="videoimage">
+                                            <input type="hidden" value="元分析于社会科学的应用（管理学、经济学领域使用元分析）" name="name">
+                                            <input type="hidden" value="guanlixue" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    元分析于社会科学的应用（管理学、经济学领域使用元分析）
+                                                </button>
+                                            </h4>
+                                        </form>
+                                        <h4><a href="Single_Channel_Home.html" title="">华—水</a> <span
+                                                class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                        <span>689K 观看 .<small class="posted_dt">一周前</small></span>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+
+                        </div>
+                    </div><!--vidz_list end-->
+                </div><!--vidz_videos end-->
+            </div>
+        </div><!--vidz-row end-->
+
+
+        <!--更多-->
+        <div class="vidz-row pop_channels">
+            <div class="container">
+                <div class="vidz_sec">
+                    <h3>更多相关</h3>
+                    <div class="vidz_list">
+                        <div class="row">
+                            <!--第一-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/others/java1.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">14:24</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="java1.jpg" name="image">
+                                            <input type="hidden" value="java1.mp4" name="videoimage">
+                                            <input type="hidden" value="【Java并发】CompletableFuture入门" name="name">
+                                            <input type="hidden" value="others" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    【Java并发】CompletableFuture入门
+                                                </button>
+                                            </h4>
+                                        </form>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+                            <!--第二-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+                                <div class="videoo">
+                                    <div class="vid_thumbainl">
+                                        <a>
+                                            <img src="{% static 'videoimage/others/java2.jpg' %}" style="width: 260px">
+                                            <span class="vid-time">14:24</span>
+                                            <span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+                                        </a>
+                                    </div><!--vid_thumbnail end-->
+                                    <div class="video_info">
+                                        <form action="{% url 'singlevideo' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="java2.jpg" name="image">
+                                            <input type="hidden" value="java2.mp4" name="videoimage">
+                                            <input type="hidden" value="Scanner的使用   Java新手基础入门教程   课工场" name="name">
+                                            <input type="hidden" value="others" name="namemulu">
+                                            <h4>
+                                                <button type="submit" style="border: none;background-color: white">
+                                                    Scanner的使用   Java新手基础入门教程   课工场
+                                                </button>
+                                            </h4>
+                                        </form>
+                                    </div>
+                                </div><!--videoo end-->
+                            </div>
+
+
+                        </div>
+                    </div><!--vidz_list end-->
+                </div><!--vidz_videos end-->
+            </div>
+        </div><!--vidz-row end-->
+
+    </section><!--vds-main end-->
+
+    <section class="more_items_sec text-center">
+        <div class="container">
+            <a href="#" title="">
+                <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.1618 24.0001H0.838235C0.374412 24.0001 0 23.6261 0 23.1628V5.86052C0 5.39727 0.374412 5.02332 0.838235 5.02332H18.1618C18.6256 5.02332 19 5.39727 19 5.86052V23.1628C19 23.6261 18.6256 24.0001 18.1618 24.0001ZM1.67647 22.3256H17.3235V6.69773H1.67647V22.3256Z"
+                          fill="#9494A0"/>
+                    <g opacity="0.25">
+                        <path opacity="0.25"
+                              d="M13.1324 4.18605C12.6685 4.18605 12.2941 3.81209 12.2941 3.34884V1.67442H6.70589V3.34884C6.70589 3.81209 6.33148 4.18605 5.86765 4.18605C5.40383 4.18605 5.02942 3.81209 5.02942 3.34884V0.83721C5.02942 0.373954 5.40383 0 5.86765 0H13.1324C13.5962 0 13.9706 0.373954 13.9706 0.83721V3.34884C13.9706 3.81209 13.5962 4.18605 13.1324 4.18605Z"
+                              fill="#9494A0"/>
+                    </g>
+                    <path d="M9.50001 19.3479C9.28487 19.3479 9.06972 19.267 8.90766 19.1024L5.92634 16.1275C5.59942 15.801 5.59942 15.2707 5.92634 14.9442C6.25325 14.6177 6.78413 14.6177 7.11104 14.9442L9.50001 17.3275L11.8862 14.9442C12.2131 14.6177 12.744 14.6177 13.0709 14.9442C13.3978 15.2707 13.3978 15.801 13.0709 16.1275L10.0924 19.1024C9.93031 19.267 9.71516 19.3479 9.50001 19.3479Z"
+                          fill="#9494A0"/>
+                    <path d="M9.49999 18.4186C9.03617 18.4186 8.66176 18.0447 8.66176 17.5814V10.3256C8.66176 9.86236 9.03617 9.4884 9.49999 9.4884C9.96382 9.4884 10.3382 9.86236 10.3382 10.3256V17.5814C10.3382 18.0447 9.96382 18.4186 9.49999 18.4186Z"
+                          fill="#9494A0"/>
+                    <g opacity="0.5">
+                        <path opacity="0.5"
+                              d="M15.6471 6.69764C15.1832 6.69764 14.8088 6.32369 14.8088 5.86043V4.18601H4.19118V5.86043C4.19118 6.32369 3.81677 6.69764 3.35294 6.69764C2.88912 6.69764 2.51471 6.32369 2.51471 5.86043V3.34881C2.51471 2.88555 2.88912 2.5116 3.35294 2.5116H15.6471C16.1109 2.5116 16.4853 2.88555 16.4853 3.34881V5.86043C16.4853 6.32369 16.1109 6.69764 15.6471 6.69764Z"
+                              fill="#9494A0"/>
+                    </g>
+                </svg>
+            </a>
+        </div>
+    </section><!--more_items_sec end-->
+{% endblock %}

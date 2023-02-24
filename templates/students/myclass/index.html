@@ -1,0 +1,53 @@
+{% extends 'students/base.html' %}
+
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h4>
+            我的班级:
+        </h4>
+    </section>
+
+    <!-- TO DO List -->
+    <div class="box box-primary">
+        <div class="box-header">
+            <i class="ion ion-clipboard"></i>
+
+            <h3 class="box-title">班级列表</h3>
+
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+            <ul class="todo-list">
+
+                {% for vo in myclasslist %}
+                    <li>
+                    <span class="handle">
+                      </span>
+                    <img src="/static/uploads/student/{{ vo.cover_pic }}" width="40px" style="border-radius: 50%"/>
+                    <span class="handle">
+                      </span>
+                    <!-- todo text -->
+                    <span class="text">{{ vo.snum }}</span>
+                    <!-- Emphasis label -->
+                    <small class="label label-danger">{{ vo.sname }}</small>
+                    <!-- General tools such as edit or delete-->
+                    <div class="tools">
+                        {% if vo.snum == request.session.student.snum %}
+
+                        {% else %}
+                            <form action="{% url 'matechat' vo.snum %}" method="post">
+                            {% csrf_token %}
+                            <button style="border: none"><i class="fa fa-comment"></i></button>
+                         </form>
+                        {% endif %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!-- /.box -->
+
+{% endblock %}

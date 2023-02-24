@@ -1,0 +1,66 @@
+{% extends "students/base.html" %}
+{% load static %}
+{% block main_body %}
+    <style>
+        .mylessoncss {
+            width: 100%;
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+            margin-right: 20px;
+            margin-left: 18px;
+            margin-top: 20px;
+        }
+
+    </style>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h4>
+            我的作业:
+        </h4>
+    </section>
+
+    <div class="col-md-12">
+        <div class="box box-primary">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+        <ul class="todo-list">
+            {% for ob in myhomew %}
+                {% if ob.tgnum in tgnumlist %}
+                    <li>
+                    <span class="handle">
+                      </span>
+                        <i class="fa fa-file-word-o"></i>
+                        <span class="handle">
+                      </span>
+                        <!-- todo text -->
+                        <span class="text">{{ ob.name }}</span>
+                        <!-- Emphasis label -->
+                        <small class="label label-danger">
+                            <a href="/static/uploads/homework/{{ ob.name }}"
+                               type="application/ms-word" style="color: white">下载 </a>
+                        </small>
+                        <span>&nbsp;&nbsp;&nbsp; {{ ob.t_name }}</span>
+
+                        <small class="label label-danger">
+                            <a href="{% url 'tijiaohomework' %}" type="application/ms-word"
+                               style="color: white"> <span>提交</span></a>
+                        </small>
+                        <!-- General tools such as edit or delete-->
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% if flag == 0 %}
+                <div style="display: flex">
+                    <div class="mylessoncss">
+                        暂无作业
+                    </div>
+                </div>
+            {% endif %}
+        </ul>
+    </div>
+
+{% endblock %}

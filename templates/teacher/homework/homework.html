@@ -1,0 +1,101 @@
+{% extends "teacher/base.html" %}
+
+{% block main_body %}
+    <style>
+        .mylessoncss {
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            margin-right: 20px;
+            margin-left: 18px;
+            margin-top: 20px;
+        }
+
+    </style>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h4>
+            发布作业:
+        </h4>
+    </section>
+
+
+    <section class="content container-fluid">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <!-- form start -->
+                    <form class="form-horizontal" action="{% url 'fabuhomework' %}" method="post"
+                          enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="box-body">
+                            <div class="form-group">
+                                {# <label for="inputPassword3" class="col-sm-2 control-label">作业：</label>#}
+                                <div class="col-sm-3">
+                                    <input type="file" name="homework"/>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="submit" class="btn btn-primary">发布</button> &nbsp;
+                                    <button type="reset" class="btn btn-default">重置</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.box-body -->
+{#                        <div class="box-footer">#}
+{#                            <div class="col-sm-offset-2 col-sm-10">#}
+{#                                <button type="submit" class="btn btn-primary">发布</button> &nbsp;#}
+{#                                <button type="reset" class="btn btn-default">重置</button>#}
+{#                                <div class="col-sm-offset-2 col-sm-10">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+                        <!-- /.box-footer -->
+                    </form>
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+
+        <section class="content-header">
+            <h4>
+                已发布作业:
+            </h4>
+        </section>
+        <div class="col-md-12">
+            <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+            <ul class="todo-list">
+                {% for ob in myhomew %}
+                    <li>
+                        <span class="handle"></span>
+                        <i class="fa fa-file-word-o"></i>
+                        <span class="handle"></span>
+                        <!-- todo text -->
+                        <span class="text">{{ ob.name }}</span>
+                        <!-- Emphasis label -->
+                        <small class="label label-danger">
+                            <a href="/static/uploads/homework/{{ ob.name }}"
+                               type="application/ms-word" style="color: white">查看 </a>
+                        </small>
+                        <div class="tools">
+                            <form action="{% url 'delhomework' ob.id %}" method="post">
+                                {% csrf_token %}
+                                <button style="border: none">删除</button>
+                            </form>
+                        </div>
+                    </li>
+                {% endfor %}
+                {% if flag == 0 %}
+                    <div style="display: flex">
+                        <div class="mylessoncss">
+                            暂无作业
+                        </div>
+                    </div>
+                {% endif %}
+            </ul>
+        </div>
+
+    </section>
+{% endblock %}

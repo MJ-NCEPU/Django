@@ -1,0 +1,49 @@
+{% extends "students/videolearn/base.html " %}
+{% load static %}
+{% block main_body %}
+    <section class="upload-videooz">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="video-file">
+                        <i class="icon-graphics_05"></i>
+                        <h3>选择一个视频</h3>
+                        <span>或拖&拽一个视频</span>
+                        <form>
+                            <label for="file-upload" class="custom-file-upload">
+                                上传视频
+                            </label>
+                            <input id="file-upload" type="file"/>
+                        </form>
+                    </div><!--video-file end-->
+                </div>
+                <div class="col-lg-6">
+                    <div class="youtube-dwn">
+                        <i class="icon-graphics_03"></i>
+                        <h3>导入一个视频 </h3>
+                        <span>复制/粘贴你的视频</span>
+                        <form>
+                            <input type="text" name="import_video" placeholder="粘贴在这">
+                            <button type="submit">导入</button>
+                        </form>
+                    </div><!--youtube-dwn end-->
+                </div>
+            </div>
+        </div>
+    </section><!--upload-videooz end-->
+
+
+    <section class="abt-vidz">
+        <ul>
+            <li>
+                <a href="#">上传视频</a>
+            </li>
+            <li>
+                <a href="#">2022/1/15 </a>
+            </li>
+            <li>
+                <a href="#">201819802</a>
+            </li>
+        </ul>
+    </section><!--abt-vidz-->
+{% endblock %}

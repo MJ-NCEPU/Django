@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>优质教育资源信息管理教师注册界面</title>
+    <!-- 支持响应式布局 -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <!-- 象形字体 -->
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/font-awesome/css/font-awesome.min.css' %}">
+    <!-- 图标 -->
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/Ionicons/css/ionicons.min.css' %}">
+    <!-- 主题风格样式 -->
+    <link rel="stylesheet" href="{% static 'myadmin/dist/css/AdminLTE.min.css' %}">
+    <!-- AdminLTE 皮肤.这里选择的是skin-blue样式，我们还可以有其他皮肤可以选择. -->
+    <link rel="stylesheet" href="{% static 'myadmin/dist/css/skins/skin-blue.min.css' %}">
+    <!-- 兼容IE9以下浏览器 -->
+    <!--[if lt IE 9]>
+  <script src="{% static 'myadmin/local/js/html5shiv.min.js' %}"></script>
+  <script src="{% static 'myadmin/local/js/respond.min.js' %}"></script>
+  <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="{% static 'myadmin/local/css/google_fonts.css' %}">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#"><b>教师注册界面</b></a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg" style="color:red">{{ info }}</p>
+
+        <form action="{% url 'teacher_register_deal' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group has-feedback">
+                <input type="text" name="name" class="form-control" placeholder="姓名">
+            </div>
+
+            <div class="form-group has-feedback">
+                <input type="text" name="gnum" class="form-control" placeholder="工号">
+            </div>
+
+            <div class="form-group has-feedback">
+                <input type="text" name="position" class="form-control" placeholder="职位">
+            </div>
+
+            <div class="form-group has-feedback">
+                <input type="text" name="phone" class="form-control" placeholder="电话">
+            </div>
+
+            <div class="form-group has-feedback">
+                <input type="password" name="password" class="form-control" placeholder="密码">
+            </div>
+
+            <div class="form-group has-feedback">
+                <input type="password" name="repassword" class="form-control" placeholder="确认密码">
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">注册</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+    </div>
+    <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery 3 -->
+<script src="{% static 'myadmin/bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'myadmin/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

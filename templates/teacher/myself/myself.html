@@ -1,0 +1,99 @@
+{% extends "teacher/base.html" %}
+{% load static %}
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            个人中心
+            <small>优质教育资源信息管理</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">个人中心</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <!-- Profile Image -->
+                <div class="box box-primary">
+                    <div class="box-body box-profile">
+                        <img class="profile-user-img img-responsive img-circle"
+                             src="{% static 'uploads/teacher/headt.png' %}" alt="User profile picture">
+
+                        <h3 class="profile-username text-center">{{ request.session.teacher.name }}</h3>
+
+                        <p class="text-muted text-center">{{ request.session.teacher.position }}</p>
+
+                        <ul class="list-group list-group-unbordered">
+                            <li class="list-group-item">
+                                <b>注册时间</b> <a class="pull-right">{{ request.session.teacher.create_at }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>登录时间</b> <a class="pull-right">{{ request.session.dtime }}</a>
+                            </li>
+                        </ul>
+
+                        <a href="{% url 'teacher_logout' %}" class="btn btn-primary btn-block"><b>退出登录</b></a>
+                        <a href="{% url 'myself_addevent_teacher' %}" class="btn btn-primary btn-block"><b>备忘录</b></a>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+
+            <div class="col-xs-9">
+                <div class="box">
+                    <div class="box-header">
+                        <h2 class="box-title"><span class="glyphicon glyphicon-calendar"
+                                                    aria-hidden="true">修改个人密码</span></h2>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form action="{% url 'myself_xiupassword' request.session.teacher.gnum %}" class="form-horizontal"
+                          method="post">
+                        {% csrf_token %}
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">旧密码：</label>
+                                <div class="col-sm-4">
+                                    <input type="password" name="password" class="form-control" id="inputEmail3"
+                                           placeholder="旧密码">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">新密码：</label>
+                                <div class="col-sm-4">
+                                    <input type="password" name="newpassword" class="form-control" id="inputEmail3"
+                                           placeholder="新密码">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">确认</button> &nbsp;
+                                <button type="reset" class="btn btn-default">重置</button>
+                                <div class="col-sm-offset-2 col-sm-10">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-footer -->
+                    </form>
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+
+    </section>
+    <!-- /.content -->
+{% endblock %}

@@ -1,0 +1,29 @@
+.vid_thums li a.active,
+.vid_thums li a:hover,
+.verify_ic i,
+.cmt-pr li span:hover a,
+.cmt-pr li span:hover i,
+.rt-cmt:hover,
+.coments > a:hover,
+.suggestions p a
+.mm_menu li:hover a,
+.mm_menu li:hover i,
+.m_linkz .mm_menu li a:hover,
+.social_links li a:hover,
+.abt-rw.tgs ul li a,
+.more-ch:hover,
+.lnks li a:hover,
+.search_form form button:hover {
+	color:#4878f2;
+}
+
+.vid_thums li a svg:hover rect,
+.more_items_sec svg:hover path {
+	fill:#4878f2;
+}
+
+
+.pr_links:before,
+.mm_menu .switch input:checked + .slider {
+	background-color:#4878f2;
+}

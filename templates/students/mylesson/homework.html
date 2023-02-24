@@ -1,0 +1,41 @@
+{% extends "students/mylesson/base.html" %}
+
+{% block main_body %}
+    <style>
+        .mylessoncss {
+            width: 100%;
+            height: 400px;
+            text-align: center;
+            line-height:400px;
+            margin-right: 20px;
+            margin-left: 18px;
+            margin-top: 20px;
+        }
+
+    </style>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            作业
+            <small>显示</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>我的课程</a></li>
+            <li class="active">{{  request.session.mylesname }}</li>
+            <li class="active">作业</li>
+        </ol>
+    </section>
+
+    <div class="col-md-12">
+        <div class="box box-primary">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div style="display: flex">
+            <div class="mylessoncss">
+                暂无作业
+            </div>
+        </div>
+    </div>
+{% endblock %}

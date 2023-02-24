@@ -1,0 +1,95 @@
+{% extends 'myadmin/base.html' %}
+
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            工资管理
+            <small>优质教育资源信息管理</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">工资管理</li>
+        </ol>
+        </section>
+    
+        <!-- Main content -->
+        <section class="content container-fluid">
+    
+        <div class="row">
+            <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                <h3 class="box-title">工资信息表</h3>
+    
+                <div class="box-tools">
+                    <form action="{% url 'salary_index' 1 %}" method="get">
+                        <div class="input-group input-group-sm" style="width:150px;">
+                          <input type="text" name="keyword" class="form-control pull-right" placeholder="姓名">
+        
+                          <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tr>
+                    <th>ID</th>
+                    <th>教师</th>
+                    <th>工号</th>
+                    <th>基本工资</th>
+                    <th>车贴</th>
+                    <th>房贴</th>
+                    <th>奖金</th>
+                    <th>总额</th>
+                    <th>创建时间</th>
+                    <th>更新时间</th>
+                    <th>操作</th>
+                    </tr>
+                    {% for vo in salarylist %}
+                    <tr>
+                    <td>{{ vo.id }}</td>
+                    <td>{{ vo.tname }}</td>
+                    <td>{{ vo.tgnum }}</td>
+                    <td>{{ vo.basicsalary }}</td>
+                    <td>{{ vo.carsubsidy }}</td>
+                    <td>{{ vo.roomsubsidy }}</td>
+                    <td>{{ vo.award }}</td>
+                    <td>{{ vo.sum }}</td>
+                    <td>{{ vo.create_at|date:'Y-m-d' }}</td>
+                    <td>{{ vo.update_at|date:'Y-m-d' }}</td>
+                    <td>
+                        <a type="button" href="{% url 'salary_edit' vo.id %}" class="btn btn-success btn-xs">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 编辑</a>
+                        <button type="button" onclick="doDel('{% url 'salary_delete' vo.id %}')" class="btn btn-danger btn-xs">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除</button>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix">
+                <a role="button" href="{% url 'salary_add' %}" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加工资信息</a>
+
+                <ul class="pagination pagination-sm no-margin pull-right">
+                    <li><a href="{% url 'salary_index' pIndex|add:-1 %}?{{mywhere|join:'&'}}">&laquo;</a></li>
+                    {% for p in plist %}
+                    <li {% if p == pIndex %}class="active"{% endif %}><a href="{% url 'salary_index' p %}?{{mywhere|join:'&'}}">{{p}}</a></li>
+                    {% endfor %}
+                    <li><a href="{% url 'salary_index' pIndex|add:1 %}?{{mywhere|join:'&'}}">&raquo;</a></li>
+                </ul>
+                </div>
+            </div>
+            <!-- /.box -->
+            </div>
+        </div>
+    
+        </section>
+        <!-- /.content -->
+{% endblock %}

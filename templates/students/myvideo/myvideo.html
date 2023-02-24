@@ -1,0 +1,54 @@
+{% extends "students/base.html" %}
+{% load static %}
+{% block main_body %}
+    <style>
+        .mylessoncss {
+            width: 100%;
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+            margin-right: 20px;
+            margin-left: 18px;
+            margin-top: 20px;
+        }
+
+    </style>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h4>
+            我的视频:
+        </h4>
+    </section>
+
+    <div class="col-md-12">
+        <div class="box box-primary">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+        <ul class="todo-list">
+            {% for ob in myvideo %}
+                {% if ob.tgnum in tgnumlist %}
+                    <li>
+
+                        <!-- Emphasis label -->
+                        <form action="{% url 'chavideo' %}" method="post" style="display: inline-block">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{ ob.name }}" name="videoname">
+                            <button type="submit" style="border: none; font-weight: bold">{{ ob.name }}</button>
+                        </form>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% if flag == 0 %}
+                <div style="display: flex">
+                    <div class="mylessoncss">
+                        暂无视频
+                    </div>
+                </div>
+            {% endif %}
+        </ul>
+    </div>
+
+{% endblock %}

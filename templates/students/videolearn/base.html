@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优质教育资源信息管理视频界面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <link rel="icon" href="images/Favicon.png">
+    <link rel="stylesheet" href="{% static 'student/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'student/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'student/css/flatpickr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'student/css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static 'student/css/fontello-codes.css' %}">
+    <link rel="stylesheet" href="{% static 'student/css/thumbs-embedded.css' %}">
+    <link rel="stylesheet" href="{% static 'student/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'student/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'student/css/color.css' %}">
+
+</head>
+
+<body>
+
+<div class="wrapper hp_1">
+
+    <header>
+        <div class="top_bar">
+            <div class="container">
+                <div class="top_header_content">
+                    <div class="menu_logo">
+                        <a href="#" title="" class="menu">
+                            <i class="icon-menu"></i>
+                        </a>
+                        <a title="" class="logo">
+                            <h4>优质教育资源信息管理</h4>
+                        </a>
+                    </div><!--menu_logo end-->
+                    <div class="search_form">
+                        <form>
+                            <input type="text" name="search" placeholder="搜索视频">
+                            <button type="submit">
+                                <i class="icon-search"></i>
+                            </button>
+                        </form>
+                    </div><!--search_form end-->
+                    <ul class="controls-lv">
+                        <li>
+                            <a href="#" title=""><i class="icon-message"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" title=""><i class="icon-notification"></i></a>
+                        </li>
+                        <li class="user-log">
+                            <div class="user-ac-img">
+                                <img src="/static/uploads/student/{{ request.session.student.cover_pic }}" style="width: 45px">
+                            </div>
+                            <div class="account-menu">
+                                <h4>{{ request.session.student.sname }}<span class="usr-status">我的</span></h4>
+                                <div class="sd_menu">
+                                    <ul class="mm_menu">
+                                        <li>
+												<span>
+													<i class="icon-user"></i>
+												</span>
+                                            <a href="#" title="">我的账户</a>
+                                        </li>
+                                        <li>
+												<span>
+													<i class="icon-paid_sub"></i>
+												</span>
+                                            <a href="#" title="">消费</a>
+                                        </li>
+                                        <li>
+												<span>
+													<i class="icon-settings"></i>
+												</span>
+                                            <a href="#" title="">设置</a>
+                                        </li>
+                                        <li>
+												<span>
+													<i class="icon-logout"></i>
+												</span>
+                                            <a href="{% url 'student_index' %}" title="">退出</a>
+                                        </li>
+                                    </ul>
+                                </div><!--sd_menu end-->
+                                <div class="sd_menu scnd">
+                                    <ul class="mm_menu">
+                                        <li>
+												<span>
+													<i class="icon-light"></i>
+												</span>
+                                            <a href="#" title="">黑夜</a>
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <b class="slider round"></b>
+                                            </label>
+                                        </li>
+                                        <li>
+												<span>
+													<i class="icon-language"></i>
+												</span>
+                                            <a href="#" title="">中文</a>
+                                        </li>
+                                        <li>
+												<span>
+													<i class="icon-feedback"></i>
+												</span>
+                                            <a href="#" title="">反馈</a>
+                                        </li>
+                                        <li>
+												<span>
+													<i class="icon-location"></i>
+												</span>
+                                            <a href="#" title="">中国</a>
+                                            <i class="icon-arrow_below"></i>
+                                        </li>
+                                    </ul>
+                                </div><!--sd_menu end-->
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{% url 'uploadvideo' %}"  class="btn-default" style="background-color: green">上传</a>
+                        </li>
+                    </ul><!--controls-lv end-->
+                    <div class="clearfix"></div>
+                </div><!--top_header_content end-->
+            </div>
+        </div><!--header_content end-->
+
+        <div class="btm_bar">
+            <div class="container">
+                <div class="btm_bar_content">
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'zhuye' %}" title="">主页</a>
+                                <div class="mega-menu">
+                                    <ul>
+                                        <li><a href="{% url 'history' %}" title="">历史视频</a></li>
+                                        <li><a href="{% url 'jisuanji' %}" title="">计算机类</a></li>
+                                        <li><a href="{% url 'english' %}" title="">英语类</a></li>
+                                        <li><a href="{% url 'math' %}" title="">数学类</a></li>
+                                        <li><a href="#" title="">会计类</a></li>
+                                        <li><a href="#" title="">管理学</a></li>
+                                        <li><a href="#" title="">经济学</a></li>
+                                        <li><a href="#" title="">四六级</a></li>
+                                        <li><a href="#" title="">求职就业</a></li>
+                                        <li><a href="#" title="">考研</a></li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li><a href="{% url 'jisuanji' %}" title="">计算机类</a></li>
+                            <li><a href="{% url 'english' %}" title="">英语类</a></li>
+                            <li><a href="{% url 'math' %}" title="">数学类</a></li>
+                            <li><a href="#" title="">会计类</a></li>
+                            <li><a href="#" title="">管理学</a></li>
+                        </ul>
+                    </nav><!--navigation end-->
+
+                    <ul class="vid_thums">
+                        <li>
+                            <a class="active" href="#" title=""><i class="icon-grid"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" title="">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     x="0px" y="0px"
+                                     viewBox="0 0 108 108" xml:space="preserve">
+										<rect width="63" height="45"/>
+                                    <rect x="81" width="27" height="45"/>
+                                    <rect x="45" y="63" width="63" height="45"/>
+                                    <rect y="63" width="27" height="45"/>
+									</svg>
+                            </a>
+                        </li>
+                    </ul><!--vid_status end-->
+                    <div class="clearfix"></div>
+                </div><!--btm_bar_content end-->
+            </div>
+        </div><!--btm_bar end-->
+    </header><!--header end-->
+
+    <div>
+        {% block main_body %}
+        {% endblock %}
+    </div>
+
+</div><!--wrapper end-->
+
+
+<script src="{% static 'student/js/jquery.min.js' %}"></script>
+<script src="{% static 'student/js/popper.js' %}"></script>
+<script src="{% static 'student/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'student/js/flatpickr.js' %}"></script>
+<script src="{% static 'student/js/script.js' %}"></script>
+
+
+</body>
+
+</html>

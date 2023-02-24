@@ -1,0 +1,75 @@
+{% extends "students/mylesson/base.html" %}
+
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            笔记
+            <small>显示</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>我的课程</a></li>
+            <li class="active">{{  request.session.mylesname }}</li>
+            <li class="active">笔记</li>
+        </ol>
+    </section>
+
+    <div class="col-md-12">
+        <div class="box box-primary">
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-11">
+                <!-- /.box -->
+
+                <!-- quick email widget -->
+                <div class="box box-info">
+
+                    <div class="box-header">
+                        <i class="fa fa-envelope"></i>
+
+                        <!-- tools box -->
+                        <div class="pull-right box-tools">
+                            <button type="button" class="btn btn-info btn-sm" data-widget="remove"
+                                    data-toggle="tooltip"
+                                    title="Remove">
+                                <i class="fa fa-times"></i></button>
+                        </div>
+                        <!-- /. tools -->
+                    </div>
+
+                    <div class="box-body">
+                        <form action="{% url 'savebiji' %}" method="post">
+                            {% csrf_token %}
+                         <textarea class="textarea" placeholder="记笔记..." name="text"
+                                   style="width: 100%; height: 225px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                         </textarea>
+                    </div>
+
+                    <div class="box-footer clearfix">
+                            <button type="submit" class="pull-right btn btn-default" id="sendEmail">保存
+                                <i class="fa fa-arrow-circle-right"></i></button>
+                        </form>
+                        <button class="pull-right btn btn-default" id="sendEmail" style="border: none">
+                        </button>
+                        <form action="{% url 'morebiji' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="pull-right btn btn-default" id="sendEmail">查看更多
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}

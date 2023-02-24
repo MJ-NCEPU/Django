@@ -1,0 +1,46 @@
+{% extends "students/mylesson/base.html" %}
+
+{% block main_body %}
+    <style>
+        .mylessoncss {
+            width: 96%;
+            height: 400px;
+            text-align: center;
+            line-height:300px;
+            margin-right: 20px;
+            margin-left: 18px;
+            margin-top: 8px;
+        }
+
+
+    </style>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            讨论
+            <small>显示</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>我的课程</a></li>
+            <li class="active">{{  request.session.mylesname }}</li>
+            <li class="active">讨论</li>
+        </ol>
+    </section>
+
+    <div class="col-md-12">
+        <div class="box box-primary">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div >
+            <div style="text-align: center;width: 160px;height: 50px;">
+                <a href="#" class="btn btn-block btn-success" style="
+                background-color: blue;border-radius: 25px;">新建讨论 +</a>
+            </div>
+            <div class="mylessoncss">
+                暂无讨论
+            </div>
+        </div>
+    </div>
+{% endblock %}

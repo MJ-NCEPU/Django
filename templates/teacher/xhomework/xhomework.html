@@ -1,0 +1,61 @@
+{% extends "teacher/base.html" %}
+{% load static %}
+{% block main_body %}
+    <style>
+        .mylessoncss {
+            width: 100%;
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+            margin-right: 20px;
+            margin-left: 18px;
+            margin-top: 20px;
+        }
+
+    </style>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h4>
+            学生提交:
+        </h4>
+    </section>
+
+    <div class="col-md-12">
+        <div class="box box-primary">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+        <ul class="todo-list">
+            {% if flag == 1 %}
+                {% for ob in sclass %}
+                    <li>
+                    <span class="handle">
+                      </span>
+                        <i class="fa fa-file-word-o"></i>
+                        <span class="handle">
+                      </span>
+                        <!-- todo text -->
+                        <span class="text">{{ ob.name }}</span>
+                        <!-- Emphasis label -->
+                        <small class="label label-danger">
+                            <a href="/static/uploads/tjhomework/{{ ob.name }}"
+                               type="application/ms-word" style="color: white">下载 </a>
+                        </small>
+                        <span>&nbsp;&nbsp;&nbsp; {{ ob.snum }}</span>
+                        <!-- General tools such as edit or delete-->
+                    </li>
+                {% endfor %}
+            {% endif %}
+            {% if flag == 0 %}
+                <div style="display: flex">
+                    <div class="mylessoncss">
+                        暂无提交
+                    </div>
+                </div>
+            {% endif %}
+        </ul>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,352 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>优质教育资源信息管理学生界面</title>
+    <!-- 支持响应式布局 -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="/static/jquery-1.8.2.min.js"></script>
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <!-- 象形字体 -->
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/font-awesome/css/font-awesome.min.css' %}">
+    <!-- 图标 -->
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/Ionicons/css/ionicons.min.css' %}">
+    <!-- 主题风格样式 -->
+    <link rel="stylesheet" href="{% static 'myadmin/dist/css/AdminLTE.min.css' %}">
+    <!-- AdminLTE 皮肤.这里选择的是skin-blue样式，我们还可以有其他皮肤可以选择. -->
+    <link rel="stylesheet" href="{% static 'myadmin/dist/css/skins/skin-blue.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'myadmin/dist/css/skins/_all-skins.min.css' %}">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/morris.js/morris.css' %}">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/jvectormap/jquery-jvectormap.css' %}">
+    <!-- Date Picker -->
+    <link rel="stylesheet"
+          href="{% static 'myadmin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{% static 'myadmin/bower_components/bootstrap-daterangepicker/daterangepicker.css' %}">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="{% static 'myadmin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' %}">
+
+    <!-- 兼容IE9以下浏览器 -->
+    <!--[if lt IE 9]>
+  <script src="{% static 'myadmin/local/js/html5shiv.min.js'%}"></script>
+  <script src="{% static 'myadmin/local/js/respond.min.js'%}"></script>
+
+  <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="{% static 'myadmin/local/css/google_fonts.css' %}">
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!-- Main Header 主体页头 -->
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <!-- 侧栏迷你徽标 mini 50x50 pixels -->
+            <span class="logo-mini"><b>育</b></span>
+            <!-- 常规状态标志和移动设备标志 -->
+            <span class="logo-lg"><b>优质教育资源信息管理</b></span>
+        </a>
+
+        <!-- Header Navbar 首部导航栏 -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button 侧边栏切换按钮 -->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">切换导航</span>
+            </a>
+            <!-- 右栏菜单 -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- messages-menu 消息菜单: 样式可以在 dropdown.less 中找到 -->
+                    <li class="dropdown messages-menu">
+                        <!-- Menu toggle button 切换按钮 -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="label label-success">4</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">你有4个短信息</li>
+                            <li>
+                                <ul class="menu">
+                                    <li><!-- start message 信息开始 -->
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <!-- User Image 使用图片 -->
+                                                <img src="/static/uploads/student/{{ request.session.student.cover_pic }}"
+                                                     class="img-circle" alt="User Image">
+                                            </div>
+                                            <!-- 消息标题和时间 -->
+                                            <h4>
+                                                我们都支持团队
+                                                <small><i class="fa fa-clock-o"></i> 5 分钟</small>
+                                            </h4>
+                                            <!-- The message -->
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <!-- end message -->
+                                </ul>
+                                <!-- /.menu -->
+                            </li>
+                            <li class="footer"><a href="#">查看所有信息</a></li>
+                        </ul>
+                    </li>
+                    <!-- /.messages-menu -->
+
+                    <!-- Notifications Menu 通知菜单 -->
+                    <li class="dropdown notifications-menu">
+                        <!-- Menu toggle button  切换按钮 -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="label label-warning">10</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">你有10条通知信息</li>
+                            <li>
+                                <!-- Inner Menu: contains the notifications -->
+                                <ul class="menu">
+                                    <li><!-- start notification -->
+                                        <a href="#">
+                                            <i class="fa fa-users text-aqua"></i> 今天有5名新成员加入
+                                        </a>
+                                    </li>
+                                    <!-- end notification -->
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">查看全部</a></li>
+                        </ul>
+                    </li>
+                    <!-- Tasks Menu 任务菜单 -->
+                    <li class="dropdown tasks-menu">
+                        <!-- Menu Toggle Button 菜单切换按钮 -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-flag-o"></i>
+                            <span class="label label-danger">9</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">你有9个任务</li>
+                            <li>
+                                <!-- Inner menu: contains the tasks -->
+                                <ul class="menu">
+                                    <li><!-- Task item -->
+                                        <a href="#">
+                                            <!-- Task title and progress text -->
+                                            <h3>
+                                                设计一些按钮
+                                                <small class="pull-right">20%</small>
+                                            </h3>
+                                            <!-- The progress bar -->
+                                            <div class="progress xs">
+                                                <!-- Change the css width attribute to simulate progress -->
+                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                     role="progressbar"
+                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                    <span class="sr-only">20% 完成</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <!-- end task item -->
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="#">查看所有任务</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- User Account Menu -->
+                    <li class="dropdown user user-menu">
+                        <!-- Menu Toggle Button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!-- The user image in the navbar-->
+                            <img src="/static/uploads/student/{{ request.session.student.cover_pic }}"
+                                 class="user-image" alt="User Image">
+                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                            <span class="hidden-xs">{{ request.session.student.sname }}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- The user image in the menu -->
+                            <li class="user-header">
+                                <img src="/static/uploads/student/{{ request.session.student.cover_pic }}"
+                                     class="img-circle" alt="User Image">
+
+                                <p>
+                                    {{ request.session.student.sname }} - 学生
+                                    <small>{{ request.session.student.create_at }}加入</small>
+                                </p>
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="{% url 'studentmyself' %}" class="btn btn-default btn-flat">个人信息</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="{% url 'student_logout' %}" class="btn btn-default btn-flat">退 出</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 左侧柱。包含徽标和边栏 -->
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="/static/uploads/student/{{ request.session.student.cover_pic }}" class="img-circle"
+                         alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>{{ request.session.student.sname }} . 学生</p>
+                    <!-- Status -->
+                    <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">主要导航</li>
+                <!-- 导航列表，你可以自行更改图标 -->
+                <li class="active"><a href="{% url 'student_index' %}"><i class="fa fa-home"></i> <span>首页</span></a>
+                </li>
+
+{#                <li><a href="{% url 'student_lesson_table' %}"><i class="fa fa-bell-o"></i> <span>我的课表</span></a></li>#}
+{#                <li><a href="{% url 'zhuanmylesson' %}"><i class="fa fa-calendar-check-o"></i> <span>我的课程</span></a>#}
+                </li>
+                <li><a href="{% url 'myhomework' %}"><i class="fa fa-edit"></i> <span>我的作业</span></a></li>
+                <li><a href="{% url 'myclass' request.session.student.snum %}"><i class="fa fa-mortar-board"></i> <span>我的班级</span></a>
+                </li>
+                <li><a href="{% url 'learnbiji' %}"><i class="fa fa-book"></i> <span>学习笔记</span></a></li>
+                <li><a href="{% url 'mynotice' request.session.student.sclass %}"><i class="fa fa-envelope"></i> <span>我的消息</span></a>
+                </li>
+{#                <li><a href="{% url 'mycollect' %}"><i class="fa fa-heart-o"></i> <span>我的收藏</span></a></li>#}
+                <li><a href="{% url 'myvideo' %}"><i class="fa fa-tv"></i> <span>我的视频</span></a></li>
+                <li><a href="{% url 'studentmyself' %}"><i class="fa fa-user"></i> <span>个人中心</span></a></li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        {% block main_body %}
+        {% endblock %}
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+        <div class="pull-right hidden-xs">
+        </div>
+        <!-- Default to the left -->
+        <strong> &copy; 2023 <a href="#">2019101</a>.</strong> 张三
+    </footer>
+
+    <!-- 添加侧栏的背景。必须放置此处紧接在控制侧边栏之后 -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- edu-model提示框模板 -->
+<div id="edu-alert" class="modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> [Title]</h5>
+            </div>
+            <div class="modal-body small">
+                <p>[Message]</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary ok" data-dismiss="modal">[BtnOk]</button>
+                <button type="button" class="btn btn-default cancel" data-dismiss="modal">[BtnCancel]</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- edu-model-end -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script src="{% static 'myadmin/bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'myadmin/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'myadmin/dist/js/adminlte.min.js' %}"></script>
+
+<script src="{% static 'myadmin/dist/js/edu-modal-alert-confirm.js' %}"></script>
+
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'myadmin/bower_components/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Morris.js charts -->
+<script src="{% static 'myadmin/bower_components/raphael/raphael.min.js' %}"></script>
+<script src="{% static 'myadmin/bower_components/morris.js/morris.min.js' %}"></script>
+<!-- Sparkline -->
+<script src="{% static 'myadmin/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js' %}"></script>
+<!-- jvectormap -->
+<script src="{% static 'myadmin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script src="{% static 'myadmin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'myadmin/bower_components/jquery-knob/dist/jquery.knob.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'myadmin/bower_components/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'myadmin/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<!-- datepicker -->
+<script src="{% static 'myadmin/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{% static 'myadmin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js' %}"></script>
+<!-- Slimscroll -->
+<script src="{% static 'myadmin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'myadmin/bower_components/fastclick/lib/fastclick.js' %}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{% static 'myadmin/dist/js/pages/dashboard.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'myadmin/dist/js/demo.js' %}"></script>
+
+<!-- 此处可以添加SimLoopl和FastClick插件，用于增强用户体验。 -->
+
+<script type="text/javascript">
+    function doDel(url) {
+        Modal.confirm({
+            msg: "确定要删除吗？",
+            title: ' 信息提示',
+            btnok: '确定',
+            btncl: '取消'
+        }).on(function (e) {
+            if (e) {
+                window.location.href = url;
+                //Modal.alert({msg: "成功删除",title: ' 信息提示',btnok: '确定',btncl:'取消'});
+            }
+        });
+    }
+</script>
+</body>
+</html>
