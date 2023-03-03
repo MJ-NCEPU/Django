@@ -228,8 +228,8 @@
                 <li class="active"><a href="{% url 'student_index' %}"><i class="fa fa-home"></i> <span>首页</span></a>
                 </li>
 
-{#                <li><a href="{% url 'student_lesson_table' %}"><i class="fa fa-bell-o"></i> <span>我的课表</span></a></li>#}
-{#                <li><a href="{% url 'zhuanmylesson' %}"><i class="fa fa-calendar-check-o"></i> <span>我的课程</span></a>#}
+                <li><a href="{% url 'student_lesson_table' %}"><i class="fa fa-bell-o"></i> <span>我的课表</span></a></li>
+                <li><a href="{% url 'zhuanmylesson' %}"><i class="fa fa-calendar-check-o"></i> <span>我的课程</span></a>
                 </li>
                 <li><a href="{% url 'myhomework' %}"><i class="fa fa-edit"></i> <span>我的作业</span></a></li>
                 <li><a href="{% url 'myclass' request.session.student.snum %}"><i class="fa fa-mortar-board"></i> <span>我的班级</span></a>
@@ -237,7 +237,7 @@
                 <li><a href="{% url 'learnbiji' %}"><i class="fa fa-book"></i> <span>学习笔记</span></a></li>
                 <li><a href="{% url 'mynotice' request.session.student.sclass %}"><i class="fa fa-envelope"></i> <span>我的消息</span></a>
                 </li>
-{#                <li><a href="{% url 'mycollect' %}"><i class="fa fa-heart-o"></i> <span>我的收藏</span></a></li>#}
+                <li><a href="{% url 'mycollect' %}"><i class="fa fa-heart-o"></i> <span>我的收藏</span></a></li>
                 <li><a href="{% url 'myvideo' %}"><i class="fa fa-tv"></i> <span>我的视频</span></a></li>
                 <li><a href="{% url 'studentmyself' %}"><i class="fa fa-user"></i> <span>个人中心</span></a></li>
             </ul>
