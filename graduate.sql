@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : local
+ Source Server         : ma
  Source Server Type    : MySQL
- Source Server Version : 80017
+ Source Server Version : 80013
  Source Host           : localhost:3306
  Source Schema         : graduate
 
  Target Server Type    : MySQL
- Target Server Version : 80017
+ Target Server Version : 80013
  File Encoding         : 65001
 
- Date: 21/05/2022 21:52:05
+ Date: 04/03/2023 09:25:35
 */
 
 SET NAMES utf8mb4;
@@ -68,12 +68,12 @@ CREATE TABLE `2018102`  (
   `password_hash` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `password_salt` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of 2018102
 -- ----------------------------
-INSERT INTO `2018102` VALUES (1, '小河', '李四', 2018102, 201810201, '信息工程学院', 2, 1, '79a489fe39e6f241289c362e0b971dc1.jpeg', '2022-01-08 13:10:34', '2022-01-08 13:10:55', 'bcde1cd46b9667340f5fbed618d80eed', '228586');
+INSERT INTO `2018102` VALUES (1, '小河', '李四', 2018102, 201810201, '信息工程学院', 1, 1, '79a489fe39e6f241289c362e0b971dc1.jpeg', '2022-01-08 13:10:34', '2022-01-08 13:10:55', 'bcde1cd46b9667340f5fbed618d80eed', '228586');
 INSERT INTO `2018102` VALUES (2, '达西', '张明', 2018102, 201810202, '信息工程学院', 2, 1, '82fc7cd1c8330f7d28c9317e818ceef2.jpeg', '2022-01-08 13:12:06', '2022-01-08 13:12:06', '9f0fbac8286937edb80e5ab7742533c8', '652230');
 INSERT INTO `2018102` VALUES (3, 'sore', '韩立', 2018102, 201810203, '信息工程学院', 2, 1, '90a5c04c88c587e29eeec16a2d1cb2ef.jpeg', '2022-01-16 09:19:12', '2022-01-16 09:19:12', '5381e0e8594ef7651fe8b3410f45ff3e', '804273');
 INSERT INTO `2018102` VALUES (4, '畅儿', '从红', 2018102, 201810204, '信息工程学院', 2, 1, '153dd9ddb04fecaa4b506893146b742e.jpeg', '2022-01-16 09:20:15', '2022-01-16 09:20:15', '4625e551ad9783cba12b67b8e5a55737', '454933');
@@ -98,7 +98,7 @@ CREATE TABLE `2018103`  (
   `password_hash` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `password_salt` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of 2018103
@@ -154,7 +154,7 @@ CREATE TABLE `2018105`  (
   `password_hash` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `password_salt` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of 2018105
@@ -311,7 +311,7 @@ CREATE TABLE `chattable`  (
   `create_at` datetime(0) NULL DEFAULT NULL,
   `update_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of chattable
@@ -329,6 +329,7 @@ INSERT INTO `chattable` VALUES (10, 201810101, 201810101, 201810103, '1111111111
 INSERT INTO `chattable` VALUES (11, 201810103, 201810101, 201810103, '222222222222222222', '2022-02-24 09:05:47', '2022-02-24 09:05:47');
 INSERT INTO `chattable` VALUES (12, 201810103, 201810103, 201810106, 'qqqqqqqqqqqq', '2022-02-24 09:06:13', '2022-02-24 09:06:13');
 INSERT INTO `chattable` VALUES (13, 201810101, 201810101, 201810107, '1111', '2022-02-26 05:42:55', '2022-02-26 05:42:55');
+INSERT INTO `chattable` VALUES (14, 201810201, 201810201, 201810202, '你好', '2022-08-17 01:55:44', '2022-08-17 01:55:44');
 
 -- ----------------------------
 -- Table structure for classroom
@@ -375,15 +376,20 @@ CREATE TABLE `django_session`  (
 INSERT INTO `django_session` VALUES ('3o7omwuwlbhhdh4kzzm85vg5x0q8y2os', '.eJxlUNtuwjAM_RXkZ0C267ppvqUSCkkK3aBUtNmEEP--tGMIaW_xybn4-A5f8dq1N38JESww1whrmA59OoNlZEakNfiTG8cnRIZm6HeE54yUVeOUQuwnsHfoAtiF1PnP3p1n6yaVUtRNqo2PM_kFayWxSRKLMMNL1FuO8y7E821hShsp81HbbBZi2aTK4T6_96rZWJWzg7_kRruh81lCKlQZMqhbkZwuZvsxxMOyq5vSuCw55MDvyzXsjm48ZpEIFq3RupC9MUXLolUdNESk6KUoS_gr_-r-5jG6Uz4AlIrCMm9zjW6KOzctt2LeIG3QrIhtqZY0M9IQ_jEIV8iWyZLAYw1h6pZbvb6LFaPl0qLC4wfnfnzf:1n7zAA:CUmfUccAqN45Mv3bsci2EyVAN3h4E5hCNM9mrsZm3Zo', '2022-01-27 12:25:06.837982');
 INSERT INTO `django_session` VALUES ('4zh6msh5oe4fjfwxv2ch7r51aydrkh8l', '.eJwdyjEOgCAQBdG7_JoGUaLchggmFIBhQWMId3e1nXkdly_hePbsPAz0plYIWBdDauQLTEdwMFIg2fiJf0k2pyW6c-EJOal50dyo2tqI-Rgv7CUbiQ:1n54T6:lmL6ywR6TJ_MHlWq1F7GYAILpZ2ovv98JEy-rUEPOyM', '2022-01-19 11:28:36.592683');
 INSERT INTO `django_session` VALUES ('7xdcdbjb9pshgo8np5j0dhrd82sfnf2m', 'eyJ2ZXJpZnljb2RlIjoiNjkwNSJ9:1n8DUh:RJL_yGquVbi6AmedJ7TUM_3sZnyYWFe3Zy9Qtp0NpDs', '2022-01-28 03:43:15.535105');
+INSERT INTO `django_session` VALUES ('bourfo7qobuqb16e1958sehdzyijexuv', 'ODY2ZTYwNWZjYzMyZjkwNmM2ZjBlYjM5YThlNjk5Mzk4YzQ0NmQ1MTp7InZlcmlmeWNvZGUiOiI4OTIwIiwiZ251bSI6IjIwMjIwMDEiLCJuYW1lIjoiXHU1ZjIwXHU4MDAxXHU1ZTA4IiwidGVhY2hlciI6eyJpZCI6MSwibmFtZSI6Ilx1NWYyMFx1ODAwMVx1NWUwOCIsImdudW0iOjIwMjIwMDEsInBhc3N3b3JkX2hhc2giOiI5YTg4ZjQ3Y2VjZjgzYmI3MGVkOGQwNWE2ZTg5YTMyYiIsInBob25lIjoiMTc1MTMzNjY4NzkiLCJwYXNzd29yZF9zYWx0IjoiNjkxNDI1Iiwic3RhdHVzIjoxLCJjcmVhdGVfYXQiOiIyMDIyLTAxLTA1IDA4OjU3OjU1IiwidXBkYXRlX2F0IjoiMjAyMi0wMS0wNSAwOToxMToxOSIsInBvc2l0aW9uIjoiXHU2NTU5XHU2Mzg4In19', '2022-10-19 10:55:59.577995');
+INSERT INTO `django_session` VALUES ('btzdmkocbuczdh1x9h8ahvw6j240yfwy', 'OTdiNTM2OTViZTBmMTk0M2UwZDRjNzdjNWYwMzUwMWVhNGM5NGFkMjp7InZlcmlmeWNvZGUiOiIzNjY0In0=', '2023-03-10 01:24:14.203824');
 INSERT INTO `django_session` VALUES ('d418acrm2shw804wvdf96z2uez4bgmb7', '.eJx1Uu1u2zAMfJVAv9OC1AdN61kCBLIkN94WO4jkDUXRdx8tJGjWtX8EQbw7knd6U7_zdRpf45Ky8gqQndqrkM7TvJZ8Vf5NTUl53Ks5nDdEK6FgLqGUP8tVigq1sY7krdRQ1yLw9716mdez1DRoDbARag7x9JXkYXWjhsPKgpN7BlZ3-o390e14CuUknD4wj7aLOY5shqGDnDiBC5S5D0YP24CnZd7ksXNoDBF3_cPYxxJ-ValSj1a7x9n3Kl5zqPkY6m3-J8AncDtg7zrvNvB6SV8ieo_osfVZylSnZW77kXO9nIZZiTOpTm3vOxH1DkXXer0tXu6-ISNgc67UNeW5PjhX5in-_LDPGpHvOebGvz9TZ_Nhtdmk7Tn-ks03R5uuZBxDyufXhrRjFucJaBSxlN1h7QIMch-IRJhIi0Jc5KscL1PcPCWLHSMDPVsr3S0__7jkl39t_JyZtWBGpt7YgdmM2lLXJ0oZMEdrmq_llvpt9__jcgRWW_VNRrxD7R15pG8yQtiB9loyslsS9dMvax49jvD-F51h38M:1n7aKq:VBxDRqtBybAows4uCjDweRzN5c6ODPudBLQ6XJgx8Oo', '2022-01-26 09:54:28.715763');
 INSERT INTO `django_session` VALUES ('eq1eqoecwl6gli9m2w96amfatrjn2pl8', '.eJx1kutu4yAQhV8l4ndaDffLs0SKMIwb7za2FaBVVfXdC2yczVbZPxZizhzOzOdP8oaXafwIS0TiCFPSkj3JL3M5E8eAMQC6J-HVp3S9ooa2qz8KcpW0HvThhBfiPskUiauS2Z-b56HIkcGhmKqrZwRDtvbbA2v1f18u8Xjy6VR7rDdmFDpgGA0fBg0YTQTpFRrrORuqw3pa5mZPtaScK2V0S34zSv4116qyVDBZCyn7XFLPFS7oMx59vuZ_AvoEcgfGSe1kE5c1PlRYR6mj_Z0lTXla5j6fktLWLzeGfO2Jj-dpLunRKnqJ3sVs-RkXUt0nrB5p227fNrBajnnqHlseynYUnAB3Ha9EnPP2JGsWU_j9F4Flun41hyb-QUYgtJlSx3zH2Acf8fzRlWLESk-BGmtXRHko2sNQz4NSh2KVahnDUv-m4zqFNpcS1ErJtH2WFrh6_rXiy78gflLXXgkFow22ArfeGjRDlD6MqCMG5GRbzG0vD4BzIVhb8UPKZke5a6DZ_yh3BeNOVJZf33Vz4FI:1n7Tb1:Wxgu4fHCZ81gbV984kPrUgWssUvk2r2fP9YNQiPzOLs', '2022-01-26 02:42:43.907888');
 INSERT INTO `django_session` VALUES ('g1stsjzos8u7zz4jwhyp1sgpucy4r4n8', '.eJwdyjEOgCAQBdG7_JoGQQpusxFMKATDgsYQ7u5qO_MGrljT_mwlRHg4Yy0UKBwpd44VfiAFeK2Q6fjEv7SYk5jvUmVCL8auTho3ap2Fz_kC6ZsbgA:1n52jz:PoRW9W7EQuaizTteBaS5JCJxu7SggrmYQnHVME_CP5A', '2022-01-19 09:37:55.482139');
+INSERT INTO `django_session` VALUES ('hz860igb06347lv5hkdkbmyy0dt30ika', 'NDQwNWI2OTFiMzQ4OWEyZTkzNDZjOWQ4NGUxOGM1ZjM1MjZhNGE3MDp7InZlcmlmeWNvZGUiOiI3ODYzIiwiYWRtaW51c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4xIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJzdGF0dXMiOjF9fQ==', '2022-08-31 01:12:21.399615');
 INSERT INTO `django_session` VALUES ('kut54dvp7mlgwcdr5iyosuw87tzbhkyz', '.eJytU9Fu2zAM_JXAz01BURIl-Tf2GiCQJarx1jhBbG8oiv77KC8J0jYd9jAYMGyKOh7vyNfmJ5_68pIOmZu28YF889CMw7yXPwTlFcgjof3LM4_pINnbY5_k8NvQH-M48RYBcQ1qrcxW0Vr5tXaPx-HpcmeI-4q8mX2hspkNF9rMlE0nkS7bGgHezNaVuJmdNyAX03Mcx32c5OJr0-em1ZVTn35cwazxaTMHn3ihew13PsgbMdTwAtO05zYemphi5v3LkmkKK-EBlZPNLDxchK4ikPALRFh53PQLbCChtwRcOlBZl053GDAnbQJ4_fj9yLXpcYrTLFWlnugz_jqc8nYXx51AUBcZFButKVn2vhgVsmUbbEiZAa7KX4TXNxhjfJ6qQ4YcVo_SiUWgbZwWo84W0ApCq3RrnGTMx_zXjLcboT_VnZ7OEUSo2i2ZN0n40OSpX2T_g23WiCtFLbpWV34x7_thHvl08VBAzj4tR3WoLs1JTKE2lm71E3pPlzlcSDRXALGpIMgASVS-GWrBiWPa3St3N_tDex-tCrHa4xKn4nXXOeDsM9hI7EPU2FXyu8NQ4ZWzShwl70Lz2S8KyqB9Pxf3rAO7At9a11r7hXU1Q6xTrVrqHMZ-6g_D0h9ZK2NP2vtq6jjNmYfpRoiPu6PDnd0hZ7huo87_fXcUWSAlT3j0wYFF-w_bYgzo4ilo03mvC8rgh0y5blAyepHp_dSqz-rLtho0X2wL-JXC1lKr6KttgRVgiyK5ad7efgMa_HmK:1nhorS:PaRDIPZBeriZpXJC12apLmZmTR4V_41PvsZin11hAhI', '2022-05-06 08:41:54.842480');
 INSERT INTO `django_session` VALUES ('ll5u3ex0per6cka5tes2yna3brwo6v2d', '.eJwdy0sKgCAURuG9_GMn9pBwN5c0cKCGV4sQ9546Pt-peGxy13dGY6FxKKUgQMa7UNgm6ApnoKVAID_ETLKbm5jfmHqEXNZtHx9nyoU7b-0H7CgbiQ:1n5IJN:QwnPfTA_DqxChwiUpfzl9KTsAjPheMOqwJYrIcgyVg8', '2022-01-20 02:15:29.648743');
 INSERT INTO `django_session` VALUES ('luc80h4kti65655jsctisd8mtvv84hki', '.eJytU8tu20AM_JVgz3FA7nt16zf0asDYZ6w2kgxLamEE_fdy5Qfs2Al6KCDowCVnyBnynf3K-7Yc4pAyaxh3Etgzm177uWMNB84B8JnFNz-OpxBavIQ6P1HVO2sTa8QzG_s2_ux9V5HWs5I2rmdnY2b16RIO1tGfc1fDC8wVrI8-5e6wZMqScT1r0IXyU1br2XgIFUFrAtaaE0IcaIDNro1UAllC5FZpyCUAJlGCCNzxFIV0YMXLj11-rayTn2ZiJb4d0f8e9mmz9eOWIHTwGTBLIXRU2doi0SWVlVMupgywjHIlBIgrjNG_TYRhpTbc1t72mQTa-BqsWq4AV6ifwDUoGmkoY96lLzP-XAl9x9sd3vJ4Pf_3vqVeCO8CJTeoVoKvhH7Z9XX0pebkxe4wbYf-omq2pLMNIde_R0r2qWv7ecz7s8ck2Kl2eao55-EphlxIpa_1pfaPm8ROq8QuAERYOBAVRSs5VMGm7OP2Ed3D7A9L-tFK56t9JuZYrAjBQE42gfI6W-cFD7V5mr_Co1FIjmtrHLv3UzuUXN3uzSNrQT2BbZRplPrE2ppB1mKDC88wtlM79Mt8Wik6Cy2sraaPZ9WOZh_J55T76ayNuj23b_M0dP7m0GRRqh6aC__90NDr4gK3zgpnOToOznBjeEJ0DqP7l0OzoIISUiAvxqSCyHUJRRdPO2Ch3B2aujdGCA7H3j4_NNVI9_WhLRmkeZraRbnjs1gBf-LY0CfJkr9N_Xnr:1nPOzB:caA2NVUUs_A28nf-B7e0NrWGfSNmlq1xNggFnrSKMb8', '2022-03-16 13:25:45.673519');
 INSERT INTO `django_session` VALUES ('meqfti0aox86ufxkglyn1h4boqex31te', '.eJytU0tu2zAQvYrBdRxwSM6Q1C5n6NaAQYlkrDb6wJJaGIHv3pEiu06cFF0UAgSJHL6Z9-Gr-JmOdT5VXUyiEKTIiwfx3E4N_ymplJTAC21o5u3dhFnJ3eR4lb-TdLw3plAd0lEUr6KOooC_V79Br8gPog_D8Ks7xv0hDAc-44Nz2dgqVdnpsrQyRRclBkrOB61KRugPXTvDg0XQmsjZeeQr0BBexpmJB6OQN4YxjNOwzFUdUxjTPowrt62ErcSNdAXaAufiqY-fVvgCoIClTzfUY921Cz9C9PzWzokzC_GBW_XCM61L4ECaB9GcXtJQdaz5vq8rxvjW1jw5t7x0A7MH3Gq11fTYt89iPbNK2p9GZr-bbJDlLKnLLG9ZpvkdZqOWng1zuNiBrEBbVz9WgKdp7Jowy3I1yWRExlJ-FndYAC4TM4lQhZia01qZ2EiSxF0xJrzOURLtJk-k5glu2EGg7EvlvNPeKfBKequsVRHAe6j84_c-Pb_36GMgyEksURsNKlsbM4CiXGbKgWPnZF6o_NEYJN5nQWsl32b7JABAi71YGP9FAG4rzjcS3_UNsanbafjsLixbcJPTWR2lDdItfUaPY70ceGuOWwUbjp6iQuKVqrj0hOXwFFM73rS89ZvNMZoz6l2V3rlO1nBqTNLx_7tOKAn48Y_OW4kK_8FnY6TOjrw2pXM6K0PWR4pJQqqMRrzzGe59RpJGmS98lm4DqkAqgL7yWW6kKhRfdCPO59-PhXRq:1nsFkj:z7PSMZeN4ZPB5OKxeN65svGESPWlKrE5_Y0T5Y1vvGw', '2022-06-04 03:26:05.439925');
 INSERT INTO `django_session` VALUES ('uvfcuwwuwyg7dsa1cmiwl8mleaku1b96', '.eJxlUNFuwyAM_JXKz2mFCZiEb4lUUXDWbE0aNWFTVe3fZ6K1mjTxAue7484P-OTb0N_jNTF40Og0VLBMeSwvhQ0qOQVac-JpBf-AIYHHQhrixxTGouuyNXXb5baJvOmfMDnDXTZcpwLHS1gW8L--FYQYEo_3jWl6RuEr6sUsse2yC-ok9xORGBOVYPEqcY_zEEWCZLS1riV3MOSwdYf3md-2qGHNy5Zxlv--rrd0PIflLBpjVN031Nbm1DR1r0XYJkqskKOprX11f1X_47GEi_QHS8poU8LcOKx8DOu2Kq33Cveq2aH2ljySMPKc_jFQ7ZT2Gj0a-K4grcO2qudY6x1aUXsl4x8uIHMf:1nBAd2:bN_Rua0urmyuWpq-XOHRVmdRDhoqQncV8KsEfZoe2Pk', '2022-02-05 07:16:04.950035');
 INSERT INTO `django_session` VALUES ('w2x80mev6omosxppnfu636xl0txw80lf', '.eJxtkstu4zAMRX8l0LoJ9KQev9FtgECW6MYziW1Edoug6L8P5SYZz6Q7gSLvJQ_5yd7x0rXXNGRkgYEWir2w6a2fzyxILiXn4oWlUyzlFhJO1ND5esKSBqo-jF2i0te-G2OZ8FCrtlxshT4Is1VqK-1u7N_YraaP5-q0n10TxX62jbf7GayK9G5NjWBO7OZ5jhMlf7Ius0Cmpe_S74eA0crvZ-8Ssvp1D4PVuJ81qlzDi8yq75hixvN1ydQtkh9waEksoyHvyBt6NwAkDCBrH6sZBWhpjPVgdxqs8Hb3a8Q6WZniNJelR4JQPoZLPhxjOVKN1ly1DrzSjXOqlVToM2TkApNWxiy9r9DytUaJp4k0DHAtdW3mgkTkEGvwzpm7jZDBQBBAGfOYnzIE33AZpAhCs68V2Sff77Wz297rIWBMR7ysVvCXfis5LZHy6I3csXv542r-J-Gjc622CVPrVNNYjtllbiKg81HJhhTG49BXeWGNUArAWc-ecYAXtId_sf9Ixmy4C8aGhfJPZGqGD4LILD5D6aZu6L_PyBi6LlDOVWZ56pa5H0j9RvBQ1Q37-gO5o-0u:1nA0P9:cIYyyZ64UMqX4h7vVEy2jHnqK4qMqJ3U6wGSVWzu3vc', '2022-02-02 02:08:55.995025');
+INSERT INTO `django_session` VALUES ('y5elma1iiortbn5jlvrfa6a30685s0d4', 'MGI1NThmZmVjMWQwOWFkZGIxNmI2ZDVkMTMwYTM4Yzc2ODdiMDUzOTp7InZlcmlmeWNvZGUiOiIzNzQ0IiwidGdudW0iOjIwMjIwMDEsImNsYXNzbnVtIjoyMDE4MTAxLCJjbGFzc21hdGUiOnsiaWQiOjMsInNuaWNrbmFtZSI6Ilx1NTQ4Y1x1OThjZSIsInNuYW1lIjoiXHU1Yjg5XHU1MjI5Iiwic2NsYXNzIjoyMDE4MTAxLCJhY2FkZW15IjoiXHU0ZmUxXHU2MDZmXHU1ZGU1XHU3YTBiXHU1YjY2XHU5NjYyIiwiY292ZXJfcGljIjoiMGU0MGMyODU2MGVmYjAxZDNmYjNiMjkyZGMzNDkwODMuanBlZyIsInN0YXR1cyI6MSwicGFzc3dvcmRfaGFzaCI6IjZiYWUwMWU0MzM2YzVlODhmNDE5ZDVlNTk1OWNkZTAwIiwic251bSI6MjAxODEwMTAzLCJwYXNzd29yZF9zYWx0IjoiODQ2NzI4IiwiY3JlYXRlX2F0IjoiMjAyMi0wMS0xNiAwOToxMzo0NyIsInVwZGF0ZV9hdCI6IjIwMjItMDEtMTYgMDk6MTM6NDcifSwiY2xhc3NtYXRlc251bSI6MjAxODEwMTAzLCJhZG1pbnVzZXIiOnsiaWQiOjEsIm5hbWUiOiJhZG1pbjEiLCJwYXNzd29yZCI6IjEyMzQ1NiIsInN0YXR1cyI6MX0sInNudW0iOiIyMDE4MTAxMDEiLCJzdHVkZW50Ijp7ImlkIjoxLCJzbmlja25hbWUiOiJcdTU0MzlcdTk4Y2UiLCJzbmFtZSI6Ilx1Njc0ZVx1NGUzZCIsInNjbGFzcyI6MjAxODEwMSwiYWNhZGVteSI6Ilx1NGZlMVx1NjA2Zlx1NWRlNVx1N2EwYlx1NWI2Nlx1OTY2MiIsImNvdmVyX3BpYyI6IjE2NTA2MTYxNjkuODk3MDUyNS5qcGVnIiwic3RhdHVzIjoxLCJwYXNzd29yZF9oYXNoIjoiNDQwM2Y4NjkzNGI4ODNmMjQ2NzlkNmRlMDFlYzQzNTUiLCJzbnVtIjoyMDE4MTAxMDEsInBhc3N3b3JkX3NhbHQiOiI1NjA0MjQiLCJjcmVhdGVfYXQiOiIyMDIyLTAxLTA4IDEyOjU2OjE2IiwidXBkYXRlX2F0IjoiMjAyMi0wMS0xMCAwMjoyMToxNCJ9LCJnbnVtIjoiMjAyMjAwMSIsIm5hbWUiOiJcdTVmMjBcdTgwMDFcdTVlMDgiLCJ0ZWFjaGVyIjp7ImlkIjoxLCJuYW1lIjoiXHU1ZjIwXHU4MDAxXHU1ZTA4IiwiZ251bSI6MjAyMjAwMSwicGFzc3dvcmRfaGFzaCI6IjlhODhmNDdjZWNmODNiYjcwZWQ4ZDA1YTZlODlhMzJiIiwicGhvbmUiOiIxNzUxMzM2Njg3OSIsInBhc3N3b3JkX3NhbHQiOiI2OTE0MjUiLCJzdGF0dXMiOjEsImNyZWF0ZV9hdCI6IjIwMjItMDEtMDUgMDg6NTc6NTUiLCJ1cGRhdGVfYXQiOiIyMDIyLTAxLTA1IDA5OjExOjE5IiwicG9zaXRpb24iOiJcdTY1NTlcdTYzODgifSwiZHRpbWUiOiIyMDIzLTAyLTI4IDE3OjE3OjI3In0=', '2023-03-18 01:01:08.282824');
+INSERT INTO `django_session` VALUES ('yxe31oee7re7nzra629t29knpu83t13j', 'YjRiMjkyNGFhY2E5M2ZmZDkxNTBmMWYxNDdiNDdlMTE5YjAzMTRhZjp7InZlcmlmeWNvZGUiOiIzMzc4IiwidGdudW0iOjIwMjIwMDEsImNsYXNzbnVtIjoyMDE4MTAxLCJzbnVtIjoiMjAxODEwMjAxIiwic3R1ZGVudCI6eyJpZCI6MSwic25pY2tuYW1lIjoiXHU1YzBmXHU2Y2IzIiwic25hbWUiOiJcdTY3NGVcdTU2ZGIiLCJzY2xhc3MiOjIwMTgxMDIsImFjYWRlbXkiOiJcdTRmZTFcdTYwNmZcdTVkZTVcdTdhMGJcdTViNjZcdTk2NjIiLCJjb3Zlcl9waWMiOiI3OWE0ODlmZTM5ZTZmMjQxMjg5YzM2MmUwYjk3MWRjMS5qcGVnIiwic3RhdHVzIjoxLCJwYXNzd29yZF9oYXNoIjoiYmNkZTFjZDQ2Yjk2NjczNDBmNWZiZWQ2MThkODBlZWQiLCJzbnVtIjoyMDE4MTAyMDEsInBhc3N3b3JkX3NhbHQiOiIyMjg1ODYiLCJjcmVhdGVfYXQiOiIyMDIyLTAxLTA4IDEzOjEwOjM0IiwidXBkYXRlX2F0IjoiMjAyMi0wMS0wOCAxMzoxMDo1NSJ9LCJteWxlc2NvdmVyX3BpYyI6IlNuaXBhc3RlXzIwMjItMDEtMTRfMTUtMzItMzYucG5nIiwibXlsZXNuYW1lIjoicHl0aG9uXHU3YTBiXHU1ZThmXHU4YmJlXHU4YmExIiwiZHRpbWUiOiIyMDIyLTA4LTE3IDA5OjU2OjUyIiwiY2xhc3NtYXRlIjp7ImlkIjoyLCJzbmlja25hbWUiOiJcdThmYmVcdTg5N2YiLCJzbmFtZSI6Ilx1NWYyMFx1NjYwZSIsInNjbGFzcyI6MjAxODEwMiwiYWNhZGVteSI6Ilx1NGZlMVx1NjA2Zlx1NWRlNVx1N2EwYlx1NWI2Nlx1OTY2MiIsImNvdmVyX3BpYyI6IjgyZmM3Y2QxYzgzMzBmN2QyOGM5MzE3ZTgxOGNlZWYyLmpwZWciLCJzdGF0dXMiOjEsInBhc3N3b3JkX2hhc2giOiI5ZjBmYmFjODI4NjkzN2VkYjgwZTVhYjc3NDI1MzNjOCIsInNudW0iOjIwMTgxMDIwMiwicGFzc3dvcmRfc2FsdCI6IjY1MjIzMCIsImNyZWF0ZV9hdCI6IjIwMjItMDEtMDggMTM6MTI6MDYiLCJ1cGRhdGVfYXQiOiIyMDIyLTAxLTA4IDEzOjEyOjA2In0sImNsYXNzbWF0ZXNudW0iOjIwMTgxMDIwMn0=', '2022-08-31 01:56:52.129176');
 
 -- ----------------------------
 -- Table structure for homework
@@ -395,19 +401,14 @@ CREATE TABLE `homework`  (
   `tgnum` int(10) NULL DEFAULT NULL,
   `t_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of homework
 -- ----------------------------
-INSERT INTO `homework` VALUES (1, '201819802_马冀.doc', 2022001, '张老师');
 INSERT INTO `homework` VALUES (4, '课前实验.doc', 2022011, '钱老师');
-INSERT INTO `homework` VALUES (7, '课前实验.doc', 2022002, '李老师');
-INSERT INTO `homework` VALUES (9, '课前实验.doc', 2022001, '张老师');
-INSERT INTO `homework` VALUES (12, '第一章.ppt', 2022001, '张老师');
-INSERT INTO `homework` VALUES (13, '第二章.ppt', 2022001, '张老师');
-INSERT INTO `homework` VALUES (14, '实验一JavaWeb开发环境实验.doc', 2022001, '张老师');
-INSERT INTO `homework` VALUES (15, '线代辅导讲义-学霸养成笔记与高分提档严选题.pdf', 2022001, '张老师');
+INSERT INTO `homework` VALUES (17, 'BlindSR_Survey.pdf', 2022001, '张老师');
+INSERT INTO `homework` VALUES (18, 'NNCnet_QKV.pdf', 2022001, '张老师');
 
 -- ----------------------------
 -- Table structure for learnbiji
@@ -420,7 +421,7 @@ CREATE TABLE `learnbiji`  (
   `create_at` datetime(0) NULL DEFAULT NULL,
   `update_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of learnbiji
@@ -436,6 +437,7 @@ INSERT INTO `learnbiji` VALUES (8, 201810102, '<p>aaaaaaaaa</p>', '2022-01-12 02
 INSERT INTO `learnbiji` VALUES (9, 201810101, '<p>bijiiiiiiiiiii</p>', '2022-01-15 12:19:43', '2022-01-15 12:19:43');
 INSERT INTO `learnbiji` VALUES (10, 201810101, '<p>我的学习笔记</p>', '2022-01-19 02:05:26', '2022-01-19 02:05:26');
 INSERT INTO `learnbiji` VALUES (11, 201810101, '', '2022-02-18 11:39:55', '2022-02-18 11:39:55');
+INSERT INTO `learnbiji` VALUES (12, 201810201, '<p>1111111111111111111</p>', '2022-08-17 01:56:07', '2022-08-17 01:56:07');
 
 -- ----------------------------
 -- Table structure for mylesson
@@ -449,7 +451,7 @@ CREATE TABLE `mylesson`  (
   `create_at` datetime(0) NULL DEFAULT NULL,
   `update_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of mylesson
@@ -481,7 +483,7 @@ CREATE TABLE `notice`  (
   `create_at` datetime(0) NULL DEFAULT NULL,
   `update_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of notice
@@ -497,6 +499,7 @@ INSERT INTO `notice` VALUES (10, '张老师', 2022001, '111111111111111111111111
 INSERT INTO `notice` VALUES (11, '马老师', 2022008, '老师的通知\r\n                            ', '2022-02-26 05:40:45', '2022-02-26 05:40:45');
 INSERT INTO `notice` VALUES (12, '付老师', 2022007, '1\r\n                            ', '2022-03-02 13:20:35', '2022-03-02 13:20:35');
 INSERT INTO `notice` VALUES (13, '张老师', 2022001, 'qqqqqqqqqqq\r\n                            ', '2022-04-22 08:42:19', '2022-04-22 08:42:19');
+INSERT INTO `notice` VALUES (14, '张老师', 2022001, '333\r\n                            ', '2022-08-17 01:53:18', '2022-08-17 01:53:18');
 
 -- ----------------------------
 -- Table structure for physics
@@ -511,7 +514,7 @@ CREATE TABLE `physics`  (
   `create_at` datetime(0) NULL DEFAULT NULL,
   `update_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of physics
@@ -560,14 +563,14 @@ CREATE TABLE `student_lesson`  (
   `lessonid` int(10) NULL DEFAULT NULL,
   `idstatus` int(10) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 71 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of student_lesson
 -- ----------------------------
 INSERT INTO `student_lesson` VALUES (1, 201810101, 1, 2);
 INSERT INTO `student_lesson` VALUES (2, 201810101, 2, 2);
-INSERT INTO `student_lesson` VALUES (3, 201810101, 3, 1);
+INSERT INTO `student_lesson` VALUES (3, 201810101, 3, 2);
 INSERT INTO `student_lesson` VALUES (4, 201810101, 4, 1);
 INSERT INTO `student_lesson` VALUES (5, 201810101, 5, 1);
 INSERT INTO `student_lesson` VALUES (6, 201810101, 6, 1);
@@ -621,6 +624,20 @@ INSERT INTO `student_lesson` VALUES (53, 201810105, 11, 1);
 INSERT INTO `student_lesson` VALUES (54, 201810105, 12, 1);
 INSERT INTO `student_lesson` VALUES (55, 201810105, 13, 1);
 INSERT INTO `student_lesson` VALUES (56, 201810105, 14, 1);
+INSERT INTO `student_lesson` VALUES (57, 201810201, 1, 1);
+INSERT INTO `student_lesson` VALUES (58, 201810201, 2, 1);
+INSERT INTO `student_lesson` VALUES (59, 201810201, 3, 1);
+INSERT INTO `student_lesson` VALUES (60, 201810201, 4, 1);
+INSERT INTO `student_lesson` VALUES (61, 201810201, 5, 1);
+INSERT INTO `student_lesson` VALUES (62, 201810201, 6, 1);
+INSERT INTO `student_lesson` VALUES (63, 201810201, 7, 1);
+INSERT INTO `student_lesson` VALUES (64, 201810201, 8, 1);
+INSERT INTO `student_lesson` VALUES (65, 201810201, 9, 1);
+INSERT INTO `student_lesson` VALUES (66, 201810201, 10, 1);
+INSERT INTO `student_lesson` VALUES (67, 201810201, 11, 1);
+INSERT INTO `student_lesson` VALUES (68, 201810201, 12, 1);
+INSERT INTO `student_lesson` VALUES (69, 201810201, 13, 1);
+INSERT INTO `student_lesson` VALUES (70, 201810201, 14, 1);
 
 -- ----------------------------
 -- Table structure for studentevent
@@ -633,7 +650,7 @@ CREATE TABLE `studentevent`  (
   `update_at` datetime(0) NULL DEFAULT NULL,
   `snum` int(10) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of studentevent
@@ -644,6 +661,7 @@ INSERT INTO `studentevent` VALUES (13, '第三次记录', '2022-01-14 08:50:53',
 INSERT INTO `studentevent` VALUES (14, '第四次记录', '2022-01-15 12:15:56', '2022-01-15 12:15:56', 201810101);
 INSERT INTO `studentevent` VALUES (15, '安利的记录', '2022-01-16 13:29:08', '2022-01-16 13:29:08', 201810103);
 INSERT INTO `studentevent` VALUES (16, '张三的第一次记录', '2022-01-17 03:05:12', '2022-01-17 03:05:12', 201810102);
+INSERT INTO `studentevent` VALUES (17, '张三', '2022-08-17 01:54:38', '2022-08-17 01:54:38', 201810201);
 
 -- ----------------------------
 -- Table structure for teacher
@@ -661,7 +679,7 @@ CREATE TABLE `teacher`  (
   `update_at` datetime(0) NULL DEFAULT NULL,
   `position` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of teacher
@@ -669,7 +687,7 @@ CREATE TABLE `teacher`  (
 INSERT INTO `teacher` VALUES (1, '张老师', 2022001, '17513366879', '9a88f47cecf83bb70ed8d05a6e89a32b', '691425', 1, '2022-01-05 08:57:55', '2022-01-05 09:11:19', '教授');
 INSERT INTO `teacher` VALUES (2, '李老师', 2022002, '17513366333', '62a7e214163208728214f05b38cf5597', '429685', 1, '2022-01-05 09:14:55', '2022-01-05 09:14:55', '教授');
 INSERT INTO `teacher` VALUES (3, '王老师', 2022003, '17513366321', 'cae69545f318a42bc34dab1eb2ab64ac', '757213', 2, '2022-01-05 09:15:36', '2022-01-05 09:38:17', '教授');
-INSERT INTO `teacher` VALUES (4, '刘老师', 2022004, '17513356879', 'e2c1309d9185bc49e66a54657137ba49', '380527', 1, '2022-01-05 09:16:48', '2022-01-05 09:16:48', '教授');
+INSERT INTO `teacher` VALUES (4, '刘老师', 2022004, '17513356879', 'e2c1309d9185bc49e66a54657137ba49', '380527', 1, '2022-01-05 09:16:48', '2023-01-31 11:39:31', 'www');
 INSERT INTO `teacher` VALUES (5, '侯老师', 2022005, '17333366879', '32c41b74733cb36848d048b1970b685e', '227636', 2, '2022-01-05 09:17:23', '2022-01-17 03:57:54', '教授');
 INSERT INTO `teacher` VALUES (6, '曹老师', 2022006, '17323366321', '6c812d4218fddde6606d441d4ab13c4f', '520540', 2, '2022-01-05 09:18:32', '2022-01-05 09:20:26', '讲师');
 INSERT INTO `teacher` VALUES (7, '付老师', 2022007, '17517366879', 'e25e6b059bc6a8b2ec40332f308b2ac0', '586127', 1, '2022-01-05 09:19:19', '2022-01-05 09:19:19', '讲师');
@@ -683,7 +701,7 @@ INSERT INTO `teacher` VALUES (15, '赵老师', 2022014, '17513366879', 'c88d7b8f
 INSERT INTO `teacher` VALUES (16, '赵老师', 2022015, '17513366321', 'a5b7ee82a5df6083f131e574aca99f20', '532893', 1, '2022-01-06 11:24:43', '2022-01-07 02:49:08', '助理');
 INSERT INTO `teacher` VALUES (17, '张老师', 2022016, '17513366333', '9cc93da962cce2b9d2cda5c1bb684e5e', '214567', 1, '2022-01-07 09:06:48', '2022-01-07 09:06:48', '助理');
 INSERT INTO `teacher` VALUES (18, '诸葛老师', 2022017, '17513366879', '531bf4e8e510d020f4da40d1a4f9186c', '663991', 9, '2022-01-19 01:53:11', '2022-01-19 01:55:53', '助理');
-INSERT INTO `teacher` VALUES (19, '诸葛老师', 2022017, '17513366879', '1686b68ea20614efb26db707937861e2', '926959', 1, '2022-01-19 01:56:28', '2022-01-19 01:56:28', '助理');
+INSERT INTO `teacher` VALUES (20, '111', 11111, '11111', '3eeaf188184cc697fa9c89ee23135fcf', '458383', 9, '2023-01-31 11:40:47', '2023-02-28 01:10:37', '111');
 
 -- ----------------------------
 -- Table structure for teacher_student
@@ -699,7 +717,7 @@ CREATE TABLE `teacher_student`  (
   `update_at` datetime(0) NULL DEFAULT NULL,
   `status` tinyint(10) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of teacher_student
@@ -742,6 +760,8 @@ INSERT INTO `teacher_student` VALUES (35, '马老师', 2022008, 2018101, NULL, '
 INSERT INTO `teacher_student` VALUES (36, '付老师', 2022007, 2018101, NULL, '2022-03-02 13:19:37', '2022-03-02 13:19:47', 2);
 INSERT INTO `teacher_student` VALUES (37, '张老师', 2022001, 2018104, NULL, '2022-03-02 13:23:30', '2022-03-02 13:23:50', 2);
 INSERT INTO `teacher_student` VALUES (38, '张老师', 2022001, 2018104, NULL, '2022-04-22 08:40:08', '2022-04-22 08:40:08', 1);
+INSERT INTO `teacher_student` VALUES (39, '张老师', 2022001, 2018108, NULL, '2022-08-17 01:51:56', '2022-08-17 01:52:06', 2);
+INSERT INTO `teacher_student` VALUES (40, '张老师', 2022001, 2018103, NULL, '2023-02-26 11:37:24', '2023-02-26 11:37:30', 2);
 
 -- ----------------------------
 -- Table structure for teacherevent
@@ -754,7 +774,7 @@ CREATE TABLE `teacherevent`  (
   `update_at` datetime(0) NULL DEFAULT NULL,
   `gnum` int(10) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of teacherevent
@@ -776,6 +796,28 @@ INSERT INTO `teacherevent` VALUES (15, '2022/2/24', '2022-02-24 08:43:34', '2022
 INSERT INTO `teacherevent` VALUES (16, '第一次记录', '2022-02-26 05:41:23', '2022-02-26 05:41:23', 2022008);
 INSERT INTO `teacherevent` VALUES (17, '第二次记录', '2022-02-26 05:41:32', '2022-02-26 05:41:32', 2022008);
 INSERT INTO `teacherevent` VALUES (18, '第七次记录', '2022-05-13 08:09:58', '2022-05-13 08:09:58', 2022001);
+INSERT INTO `teacherevent` VALUES (19, '2222', '2022-08-17 01:18:04', '2022-08-17 01:18:04', 2022001);
+INSERT INTO `teacherevent` VALUES (20, '33333', '2022-08-17 01:51:40', '2022-08-17 01:51:40', 2022001);
+
+-- ----------------------------
+-- Table structure for tijiaohomework
+-- ----------------------------
+DROP TABLE IF EXISTS `tijiaohomework`;
+CREATE TABLE `tijiaohomework`  (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `snum` int(255) NULL DEFAULT NULL,
+  `s_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tijiaohomework
+-- ----------------------------
+INSERT INTO `tijiaohomework` VALUES (3, 'DASR_supplemental.pdf', 201810101, '201810101');
+INSERT INTO `tijiaohomework` VALUES (4, 'CCNN.pdf', 201810101, '201810101');
+INSERT INTO `tijiaohomework` VALUES (5, 'CARN.pdf', 201810101, '201810101');
+INSERT INTO `tijiaohomework` VALUES (6, '记录.pdf', 201810101, '201810101');
 
 -- ----------------------------
 -- Table structure for tlessontable
@@ -789,7 +831,7 @@ CREATE TABLE `tlessontable`  (
   `thursday` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `friday` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tlessontable
@@ -810,12 +852,6 @@ CREATE TABLE `video`  (
   `tgnum` int(10) NULL DEFAULT NULL,
   `t_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of video
--- ----------------------------
-INSERT INTO `video` VALUES (19, '1_每天必用的15个英语句型，学会了够用一生，学习英语初级口语听力必！_高清 1080P.mp4', 2022001, '张老师');
-INSERT INTO `video` VALUES (20, '1_【英语学习】100个基础英语单词！_高清 720P.mp4', 2022001, '张老师');
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
